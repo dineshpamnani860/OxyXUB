@@ -7,8 +7,8 @@
 
 from datetime import datetime
 
-from pyOxyXUB.functions.asst_fns import *
-from pyOxyXUB.misc._decorators import sed
+from pyUltroid.functions.asst_fns import *
+from pyUltroid.misc._decorators import sed
 from telethon import Button, events
 from telethon.utils import get_display_name
 
