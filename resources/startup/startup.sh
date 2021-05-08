@@ -13,4 +13,4 @@ echo "
 
 "
 
-python3 -m pyOxyXUB
+python3 -m pyUltroid
