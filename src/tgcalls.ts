@@ -1,10 +1,10 @@
 /**
-* OxyX-UB - UserBot
+* OxyXUB - UserBot
 * Copyright (C) 2020 OxyNotOp
 *
-* This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+* This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 * PLease read the GNU Affero General Public License in
-* <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+* <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 **/
 
 import { Chat } from 'typegram';
