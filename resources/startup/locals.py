@@ -2,9 +2,9 @@
 # OxyX - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # Please read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 # Standalone file for facilitating local deploys.
 
@@ -29,11 +29,11 @@ def start():
     print("Welcome to OxyX, lets start setting up!\n\n")
     print("Cloning the repository...\n\n")
     try:
-        os.system("git clone https://github.com/OxyNotOp/OxyX-UB && cd OxyX-UB")
+        os.system("git clone https://github.com/OxyNotOp/OxyXUB && cd OxyXUB")
     except Exception as e:
         print(f"ERROR\n{str(e)}")
     print("\n\nDone")
-    os.system("cd OxyX-UB")
+    os.system("cd OxyXUB")
     clear_screen()
     print(a)
     print("\n\nLet's start!\n")
@@ -73,7 +73,7 @@ def start():
     print(all_done)
     isitdone = input("\n\nIs it all correct? [y/n]")
     if isitdone == "y":
-        # https://github.com/OxyNotOp/OxyX-UB/blob/31b9eb1f4f8059e0ae66adb74cb6e8174df12eac/resources/startup/locals.py#L35
+        # https://github.com/OxyNotOp/OxyXUB/blob/31b9eb1f4f8059e0ae66adb74cb6e8174df12eac/resources/startup/locals.py#L35
         f = open(".env", "w")
         f.write(all_done)
         f.close
@@ -81,7 +81,7 @@ def start():
         print("Oh, let's redo these then -_-")
         start()
     else:
-        # https://github.com/OxyNotOp/OxyX-UB/blob/31b9eb1f4f8059e0ae66adb74cb6e8174df12eac/resources/startup/locals.py#L35
+        # https://github.com/OxyNotOp/OxyXUB/blob/31b9eb1f4f8059e0ae66adb74cb6e8174df12eac/resources/startup/locals.py#L35
         f = open(".env", "w")
         f.write(all_done)
         f.close
@@ -135,7 +135,7 @@ def check_for_py():
 
 def gen_session():
     print("\nProcessing...")
-    # https://github.com/OxyNotOp/OxyX-UB/blob/31b9eb1f4f8059e0ae66adb74cb6e8174df12eac/resources/startup/locals.py#L35
+    # https://github.com/OxyNotOp/OxyXUB/blob/31b9eb1f4f8059e0ae66adb74cb6e8174df12eac/resources/startup/locals.py#L35
     os.system("python3 resources/session/ssgen.py")
     return
 
