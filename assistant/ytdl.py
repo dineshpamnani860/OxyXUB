@@ -11,7 +11,7 @@ import os
 import re
 import time
 
-from pyOxyXUB.functions.all import *
+from pyUltroid.functions.all import *
 from telethon import Button
 from telethon.errors import UserNotParticipantError
 from telethon.tl.types import DocumentAttributeAudio
