@@ -1,14 +1,14 @@
 /**
-* OxyXUB - UserBot
-* Copyright (C) 2020 OxyNotOp
+* Ultroid - UserBot
+* Copyright (C) 2020 TeamUltroid
 *
-* This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+* This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 * PLease read the GNU Affero General Public License in
-* <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+* <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 **/
 
 import { Composer } from 'telegraf';
-import { getQueue } from '../tgcalls';
+import { getQueue, leaveVc, getCurrentSong, closeConnection } from '../tgcalls';
 import escapeHtml from '@youtwitface/escape-html';
 import { getDuration } from '../utils';
 
@@ -29,4 +29,10 @@ export const queueHandler = Composer.command('queue', async ctx => {
             : 'The queue is empty.';
 
     await ctx.replyWithHTML(message, { disable_web_page_preview: true });
+
+    const song = getCurrentSong(chat.id);
+    if (song === null && queue?.length == 0) {
+        closeConnection();
+        leaveVc(chat.id);
+    }
 });

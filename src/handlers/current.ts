@@ -1,10 +1,10 @@
 /**
-* OxyXUB - UserBot
-* Copyright (C) 2020 OxyNotOp
+* Ultroid - UserBot
+* Copyright (C) 2020 TeamUltroid
 *
-* This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+* This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 * PLease read the GNU Affero General Public License in
-* <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+* <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 **/
 
 import { Composer, Markup } from 'telegraf';
@@ -36,7 +36,10 @@ export const songHandler = Composer.command('current', async ctx => {
         ...Markup.inlineKeyboard([
             [
                 Markup.button.callback('Pause', `pause:${id}`),
-                Markup.button.callback('Skip', `skip:${id}`)
+                Markup.button.callback('Skip', `skip:${id}`),
+            ],
+            [
+                Markup.button.callback('Exit', `exitVc`),
             ]
         ])
     })
