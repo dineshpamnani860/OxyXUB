@@ -1,7 +1,7 @@
 from os import listdir, path
 from typing import Any, Dict, List, Union
 
-from pyOxyX-UB import udB
+from pyOxyXUB import udB
 from yaml import safe_load
 
 languages = {}
