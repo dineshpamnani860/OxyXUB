@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 import re
 
@@ -36,4 +36,5 @@ async def settt(event):
     udB.set("language", f"{lang}")
     await event.edit(
         f"Your language has been set to {languages[lang]['natively']} [{lang}].",
+        buttons=get_back_button("lang"),
     )
