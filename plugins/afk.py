@@ -1,9 +1,9 @@
-# OxyX - UserBot
-# Copyright (C) 2020 TeamOxy
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -22,7 +22,6 @@ from pyUltroid.functions.pmpermit_db import *
 from telethon import events
 from telethon.tl.functions.account import GetPrivacyRequest
 from telethon.tl.types import InputPrivacyKeyStatusTimestamp, PrivacyValueAllowAll
-
 
 from . import *
 
@@ -161,6 +160,8 @@ async def on_afk(event):
 
 @ultroid_cmd(pattern=r"afk ?(.*)")
 async def _(event):
+    if not is_fullsudo(event.sender_id):
+        return await eor(event, "`This Command Is Sudo Restricted.`")
     reply = await event.get_reply_message()
     global USER_AFK
     global afk_time

@@ -1,16 +1,16 @@
-# OxyX - UserBot
-# Copyright (C) 2020 TeamOxy
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 import random
 import re
 import time
 from datetime import datetime
 from math import ceil
-from platform import python_version as pyver
+from platform import python_version as PyVer
 
 from git import Repo
 from pyUltroid import __version__ as UltVer
@@ -22,18 +22,18 @@ from . import *
 
 # ================================================#
 notmine = f"This bot is for {OWNER_NAME}"
-OXYX_PIC = "https://telegra.ph/file/3fcedffee57f157622797.jpg"
+ULTROID_PIC = "https://telegra.ph/file/031957757a4f6a5191040.jpg"
 helps = get_string("inline_1")
 
 add_ons = udB.get("ADDONS")
-if add_ons:
+if add_ons == "True" or add_ons is None:
     zhelps = get_string("inline_2")
 else:
     zhelps = get_string("inline_3")
 # ============================================#
 
 
-@inline
+@in_pattern("")
 @in_owner
 async def e(o):
     if len(o.text) == 0:
@@ -46,32 +46,32 @@ async def e(o):
             ultroid_version,
             UltVer,
             uptime,
-            pyver(),
+            PyVer(),
             __version__,
             Repo().active_branch,
         )
         res = [
             await b.article(
-                title="OxyX Userbot",
-                url="https://t.me/OxyXsupport",
+                title="Ultroid Userbot",
+                url="https://t.me/TeamUltroid",
                 description="Userbot | Telethon ",
                 text=ALIVEMSG,
-                thumb=InputWebDocument(OXYX_PIC, 0, "image/jpeg", []),
+                thumb=InputWebDocument(ULTROID_PIC, 0, "image/jpeg", []),
                 buttons=[
-                    [Button.url(text="Support Group", url="t.me/OxyXsupport")],
+                    [Button.url(text="Support Group", url="t.me/UltroidSupport")],
                     [
                         Button.url(
                             text="Repo",
-                            url="https://github.com/OxyNotOp/OxyX-UB",
+                            url="https://github.com/Teamultroid/Ultroid",
                         ),
                     ],
                 ],
             ),
         ]
-        await o.answer(res, switch_pm=f"👥 OXYX PORTAL", switch_pm_param="start")
+        await o.answer(res, switch_pm=f"👥 ULTROID PORTAL", switch_pm_param="start")
 
 
-if Var.BOT_USERNAME is not None and asst is not None:
+if asst.me is not None:
 
     @inline
     @in_owner
@@ -85,16 +85,12 @@ if Var.BOT_USERNAME is not None and asst is not None:
                 for y in x:
                     z.append(y)
             cmd = len(z) + 10
-            bn = Var.BOT_USERNAME
-            if bn.startswith("@"):
-                bnn = bn.replace("@", "")
-            else:
-                bnn = bn
+            bnn = asst.me.username
             result = builder.article(
                 title="Help Menu",
                 description="Help Menu - UserBot | Telethon ",
-                url="https://t.me/OxyXsupport",
-                thumb=InputWebDocument(OXYX_PIC, 0, "image/jpeg", []),
+                url="https://t.me/TheUltroid",
+                thumb=InputWebDocument(ULTROID_PIC, 0, "image/jpeg", []),
                 text=get_string("inline_4").format(
                     OWNER_NAME,
                     len(PLUGINS) - 5,
@@ -136,8 +132,6 @@ if Var.BOT_USERNAME is not None and asst is not None:
             )
             await event.answer([result] if result else None)
 
-    @inline
-    @in_owner
     @callback("ownr")
     @owner
     async def setting(event):
@@ -210,19 +204,12 @@ if Var.BOT_USERNAME is not None and asst is not None:
             ],
             [
                 Button.switch_inline(
-                    "Rᴇx Tᴇsᴛᴇʀ",
-                    query="rex",
-                    same_peer=True,
-                ),
-                Button.switch_inline(
                     "CʟɪᴘAʀᴛ Sᴇᴀʀᴄʜ",
                     query="clipart frog",
                     same_peer=True,
                 ),
-            ],
-            [
                 Button.switch_inline(
-                    "OʀᴀɴɢᴇFᴏx🦊Rᴇᴄᴏᴠᴇʀʏ",
+                    "OʀᴀɴɢᴇFᴏx🦊",
                     query="ofox beryllium",
                     same_peer=True,
                 ),
@@ -325,11 +312,7 @@ if Var.BOT_USERNAME is not None and asst is not None:
     @callback("open")
     @owner
     async def opner(event):
-        bn = Var.BOT_USERNAME
-        if bn.startswith("@"):
-            bnn = bn.replace("@", "")
-        else:
-            bnn = bn
+        bnn = asst.me.username
         buttons = [
             [
                 Button.inline("• Pʟᴜɢɪɴs ", data="hrrrr"),
@@ -389,7 +372,7 @@ if Var.BOT_USERNAME is not None and asst is not None:
             reply_pop_up_alert = f"{plugin_name} has no detailed help..."
         else:
             reply_pop_up_alert = help_string
-        reply_pop_up_alert += "\n© @OxyXSupport"
+        reply_pop_up_alert += "\n© @TeamUltroid"
         try:
             if event.query.user_id in sed:
                 await event.edit(
@@ -440,7 +423,7 @@ if Var.BOT_USERNAME is not None and asst is not None:
             reply_pop_up_alert = f"{plugin_name} has no detailed help..."
         else:
             reply_pop_up_alert = help_string
-        reply_pop_up_alert += "\n© @OxyXsupport"
+        reply_pop_up_alert += "\n© @TeamUltroid"
         try:
             if event.query.user_id in sed:
                 await event.edit(
