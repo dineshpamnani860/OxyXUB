@@ -1,10 +1,10 @@
 # /usr/bin/python3
-# OxyX - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # Please read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 # Standalone file for facilitating local deploys.
 
@@ -26,10 +26,10 @@ def start():
     check_for_py()
 
     print(f"{a}\n\n")
-    print("Welcome to OxyX, lets start setting up!\n\n")
+    print("Welcome to Ultroid, lets start setting up!\n\n")
     print("Cloning the repository...\n\n")
     try:
-        os.system("git clone https://github.com/OxyNotOp/OxyXUB && cd Ultroid")
+        os.system("git clone https://github.com/TeamUltroid/Ultroid && cd Ultroid")
     except Exception as e:
         print(f"ERROR\n{str(e)}")
     print("\n\nDone")
@@ -64,7 +64,7 @@ def start():
         "REDIS_PASSWORD",
         "LOG_CHANNEL",
     ]
-    all_done = "# OxyX Environment Variables.\n# Do not delete this file.\n\n"
+    all_done = "# Ultroid Environment Variables.\n# Do not delete this file.\n\n"
     for i in varrs:
         all_done += do_input(i)
     clear_screen()
@@ -73,7 +73,7 @@ def start():
     print(all_done)
     isitdone = input("\n\nIs it all correct? [y/n]")
     if isitdone == "y":
-        # https://github.com/OxyNotOp/OxyXUB/blob/31b9eb1f4f8059e0ae66adb74cb6e8174df12eac/resources/startup/locals.py#L35
+        # https://github.com/TeamUltroid/Ultroid/blob/31b9eb1f4f8059e0ae66adb74cb6e8174df12eac/resources/startup/locals.py#L35
         f = open(".env", "w")
         f.write(all_done)
         f.close
@@ -81,17 +81,17 @@ def start():
         print("Oh, let's redo these then -_-")
         start()
     else:
-        # https://github.com/OxyNotOp/OxyXUB/blob/31b9eb1f4f8059e0ae66adb74cb6e8174df12eac/resources/startup/locals.py#L35
+        # https://github.com/TeamUltroid/Ultroid/blob/31b9eb1f4f8059e0ae66adb74cb6e8174df12eac/resources/startup/locals.py#L35
         f = open(".env", "w")
         f.write(all_done)
         f.close
     clear_screen()
     print("\nCongrats. All done!\nTime to start the bot!")
     print("\nInstalling requirements... This might take a while...")
-    os.system("pip3 install -r ./resources/extras/local-requirements.txt")
+    os.system("pip3 install -r resources/extras/local-requirements.txt")
     clear_screen()
     print(a)
-    print("\nStarting OxyX...")
+    print("\nStarting Ultroid...")
     os.system("python3 -m pyUltroid")
 
 
@@ -135,7 +135,7 @@ def check_for_py():
 
 def gen_session():
     print("\nProcessing...")
-    # https://github.com/OxyNotOp/OxyXUB/blob/31b9eb1f4f8059e0ae66adb74cb6e8174df12eac/resources/startup/locals.py#L35
+    # https://github.com/TeamUltroid/Ultroid/blob/31b9eb1f4f8059e0ae66adb74cb6e8174df12eac/resources/startup/locals.py#L35
     os.system("python3 resources/session/ssgen.py")
     return
 
