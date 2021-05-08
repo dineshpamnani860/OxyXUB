@@ -70,7 +70,7 @@ alive_1: "**The OxyX Userbot...**\n\n
 ┣ **ρүтнση** - `{}`\n
 ┣ **тεℓεтнση** - `{}`\n
 ┣ **вяαηcн** - `{}`\n
-╰──────•◈•──────╯""
+╰──────•◈•──────╯"
 log: "**Heroku** Ultroid Logs.\nPasted [here]({}) too!"
 ping: "**Pong !!** `{}ms`\n**Uptime** - `{}`"
 usage: "**⚙️ Dyno Usage ⚙️**:\n\n
