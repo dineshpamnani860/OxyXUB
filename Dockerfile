@@ -3,7 +3,7 @@
 # This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
 # PLease read the GNU Affero General Public License in <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
 
-FROM OxyX-UBteam/OxyX-UB:0.0.3
+FROM oxyx-ubteam/oxyx-ub:0.0.3
 #RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
 #    dpkg -i ./google-chrome-stable_current_amd64.deb; apt -fqqy install && \
 #    rm ./google-chrome-stable_current_amd64.deb
