@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 import os
 
@@ -14,7 +14,7 @@ from . import *
 
 # --------------------------------------------------------------------#
 telegraph = Telegraph()
-r = telegraph.create_account(short_name="OxyX-UB")
+r = telegraph.create_account(short_name="OxyXUB")
 auth_url = r["auth_url"]
 # --------------------------------------------------------------------#
 
@@ -38,7 +38,7 @@ async def _(e):
     token_file_data = f.read()
     udB.set("GDRIVE_TOKEN", token_file_data)
     await e.reply(
-        "`Success!\nYou are all set to use Google Drive with OxyX-UB Userbot.`",
+        "`Success!\nYou are all set to use Google Drive with OxyXUB Userbot.`",
         buttons=Button.inline("Main Menu", data="setter"),
     )
 
@@ -57,7 +57,7 @@ async def _(e):
         + "4. Copy link of that folder."
         + "5. Send all characters which is after id= .",
     )
-    async with OxyX-UB_bot.asst.conversation(e.sender_id) as conv:
+    async with OxyXUB_bot.asst.conversation(e.sender_id) as conv:
         reply = conv.wait_event(events.NewMessage(from_users=e.sender_id))
         repl = await reply
         udB.set("GDRIVE_FOLDER_ID", repl.text)
@@ -73,7 +73,7 @@ async def _(e):
     if not e.is_private:
         return
     await e.edit("Send your CLIENT SECRET")
-    async with OxyX-UB_bot.asst.conversation(e.sender_id) as conv:
+    async with OxyXUB_bot.asst.conversation(e.sender_id) as conv:
         reply = conv.wait_event(events.NewMessage(from_users=e.sender_id))
         repl = await reply
         udB.set("GDRIVE_CLIENT_SECRET", repl.text)
@@ -89,7 +89,7 @@ async def _(e):
     if not e.is_private:
         return
     await e.edit("Send your CLIENT ID ending with .com")
-    async with OxyX-UB_bot.asst.conversation(e.sender_id) as conv:
+    async with OxyXUB_bot.asst.conversation(e.sender_id) as conv:
         reply = conv.wait_event(events.NewMessage(from_users=e.sender_id))
         repl = await reply
         if not repl.text.endswith(".com"):
@@ -127,7 +127,7 @@ async def _(e):
 @owner
 async def otvaar(event):
     await event.edit(
-        "Other Variables to set for @TheOxyX-UB:",
+        "Other Variables to set for @TheOxyXUB:",
         buttons=[
             [
                 Button.inline("Tᴀɢ Lᴏɢɢᴇʀ", data="taglog"),
@@ -189,7 +189,7 @@ async def pluginch(event):
     name = "Plugin Channel"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "Send id or username of a channel from where u want to install all plugins\n\nOur Channel~ @OxyX-UBplugins\n\nUse /cancel to cancel.",
+            "Send id or username of a channel from where u want to install all plugins\n\nOur Channel~ @OxyXUBplugins\n\nUse /cancel to cancel.",
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
@@ -779,7 +779,7 @@ async def pmofff(event):
 @owner
 async def chbot(event):
     await event.edit(
-        f"From This Feature U can chat with ppls Via ur Assistant Bot.\n[More info](https://t.me/OxyX-UBUpdates/2)",
+        f"From This Feature U can chat with ppls Via ur Assistant Bot.\n[More info](https://t.me/OxyXUBUpdates/2)",
         buttons=[
             [Button.inline("Cʜᴀᴛ Bᴏᴛ  Oɴ", data="onchbot")],
             [Button.inline("Cʜᴀᴛ Bᴏᴛ  Oғғ", data="ofchbot")],
@@ -846,7 +846,7 @@ async def chon(event):
 @owner
 async def vcb(event):
     await event.edit(
-        f"From This Feature U can play songs in group voice chat\n\n[moreinfo](https://t.me/OxyX-UBUpdates/4)",
+        f"From This Feature U can play songs in group voice chat\n\n[moreinfo](https://t.me/OxyXUBUpdates/4)",
         buttons=[
             [Button.inline("VC Sᴇssɪᴏɴ", data="vcs")],
             [Button.inline("WEBSOCKET", data="vcw")],

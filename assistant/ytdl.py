@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 
 import asyncio
@@ -11,7 +11,7 @@ import os
 import re
 import time
 
-from pyOxyX-UB.functions.all import *
+from pyOxyXUB.functions.all import *
 from telethon import Button
 from telethon.errors import UserNotParticipantError
 from telethon.tl.types import DocumentAttributeAudio
@@ -130,8 +130,8 @@ async def _(sur):
         )
         MSG = f"**{ytdl_data['title']}** Uploaded Successfully !"
         chat = sur.chat_id
-        whome = OxyX-UB_bot
-        if sur.is_private and sur.sender_id != OxyX-UB_bot.uid:
+        whome = OxyXUB_bot
+        if sur.is_private and sur.sender_id != OxyXUB_bot.uid:
             chat = sur.sender_id
             whome = asst
             MSG += f"\nGet at {Var.BOT_USERNAME}"
@@ -213,8 +213,8 @@ async def _(fuk):
         )
         MSG = f"**{ytdl_data['title']}** Uploaded Successfully !"
         chat = fuk.chat_id
-        whome = OxyX-UB_bot
-        if event.is_private and event.sender_id != OxyX-UB_bot.uid:
+        whome = OxyXUB_bot
+        if event.is_private and event.sender_id != OxyXUB_bot.uid:
             chat = fuk.sender_id
             whome = asst
             MSG += f"\nGet at {Var.BOT_USERNAME}"
@@ -222,7 +222,7 @@ async def _(fuk):
             await whome.send_file(
                 chat,
                 f"{ytdl_data['id']}.mp4",
-                thumb=f"./resources/extras/OxyX-UB.jpg",
+                thumb=f"./resources/extras/OxyXUB.jpg",
                 caption=f"**{ytdl_data['title']}\n{time_formatter((ytdl_data['duration'])*1000)}\n{ytdl_data['uploader']}**",
                 supports_streaming=True,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
@@ -240,7 +240,7 @@ async def _(fuk):
             await asst.send_file(
                 chat,
                 f"{ytdl_data['id']}.mp4",
-                thumb=f"./resources/extras/OxyX-UB.jpg",
+                thumb=f"./resources/extras/OxyXUB.jpg",
                 caption=f"**{ytdl_data['title']}\n{time_formatter((ytdl_data['duration'])*1000)}\n{ytdl_data['uploader']}**",
                 supports_streaming=True,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(

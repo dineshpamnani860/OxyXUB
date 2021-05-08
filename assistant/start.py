@@ -1,14 +1,14 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 from datetime import datetime
 
-from pyOxyX-UB.functions.asst_fns import *
-from pyOxyX-UB.misc._decorators import sed
+from pyOxyXUB.functions.asst_fns import *
+from pyOxyXUB.misc._decorators import sed
 from telethon import Button, events
 from telethon.utils import get_display_name
 
@@ -35,12 +35,12 @@ async def assistant(event):
             if udB.get("PMBOT") == "True":
                 ok = "➼ You can contact my master using this bot!!\n\n➼ Send your Message, I will Deliver it To Master\n\n➼ Contact My Owner :- @FallenAngel_xD"
             await event.reply(
-                f"➼ Helloww there, this is OxyX-UB Assistant of {OWNER_NAME}!\n\n{ok}",
+                f"➼ Helloww there, this is OxyXUB Assistant of {OWNER_NAME}!\n\n{ok}",
                 buttons=[Button.url("Know More", url="https://t.me/OxyXsupport")],
             )
         else:
             u = await event.client.get_entity(event.chat_id)
-            me = f"[{OxyX-UB_bot.me.first_name}](tg://user?id={OxyX-UB_bot.uid})"
+            me = f"[{OxyXUB_bot.me.first_name}](tg://user?id={OxyXUB_bot.uid})"
             mention = f"[{get_display_name(u)}](tg://user?id={u.id})"
             await event.reply(
                 Redis("STARTMSG").format(me=me, mention=mention),
@@ -50,7 +50,7 @@ async def assistant(event):
 
 @asst_cmd("start ?(.*)")
 @owner
-async def OxyX-UB(event):
+async def OxyXUB(event):
     if event.pattern_match.group(1):
         return
     if event.is_group:
@@ -77,7 +77,7 @@ async def OxyX-UB(event):
 # aah, repeat the codes..
 @callback("mainmenu")
 @owner
-async def OxyX-UB(event):
+async def OxyXUB(event):
     if event.is_group:
         return
     await event.edit(
@@ -99,7 +99,7 @@ async def OxyX-UB(event):
 @owner
 async def botstat(event):
     ok = len(get_all_users())
-    msg = """OxyX-UB Assistant - Stats
+    msg = """OxyXUB Assistant - Stats
 Total Users - {}""".format(
         ok,
     )

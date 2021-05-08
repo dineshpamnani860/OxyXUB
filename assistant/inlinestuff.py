@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 from random import randrange
 from re import compile as re_compile
@@ -150,13 +150,13 @@ async def _(e):
 async def repo(e):
     res = [
         await e.builder.article(
-            title="OxyX-UB Userbot",
+            title="OxyXUB Userbot",
             description="Userbot | Telethon",
             thumb=wb(ultpic, 0, "image/jpeg", []),
-            text="• **OxyX-UB USERBOT** •",
+            text="• **OxyXUB USERBOT** •",
             buttons=[
-                [Button.url("Repo", url="https://github.com/OxyNotOp/OxyX-UB")],
-                [Button.url("Support", url="t.me/OxyX-UBSupport")],
+                [Button.url("Repo", url="https://github.com/OxyNotOp/OxyXUB")],
+                [Button.url("Support", url="t.me/OxyXUBSupport")],
             ],
         ),
     ]

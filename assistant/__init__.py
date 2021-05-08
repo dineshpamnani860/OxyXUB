@@ -1,19 +1,19 @@
 # OxyX - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
-from pyOxyX-UB import *
-from pyOxyX-UB.dB.database import Var
-from pyOxyX-UB.functions.all import *
+from pyOxyXUB import *
+from pyOxyXUB.dB.database import Var
+from pyOxyXUB.functions.all import *
 from telethon import Button, custom
 
 from strings import get_languages, get_string
 
-OWNER_NAME = OxyX-UB_bot.me.first_name
-OWNER_ID = OxyX-UB_bot.me.id
+OWNER_NAME = OxyXUB_bot.me.first_name
+OWNER_ID = OxyXUB_bot.me.id
 
 
 async def setit(event, name, value):
