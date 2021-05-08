@@ -1,9 +1,9 @@
 # OxyX - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Copyright (C) 2020 TeamOxy
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
 
 from pyUltroid import *
 from pyUltroid.dB.database import Var
@@ -12,8 +12,8 @@ from telethon import Button, custom
 
 from strings import get_languages, get_string
 
-OWNER_NAME = OxyXUB_bot.me.first_name
-OWNER_ID = OxyXUB_bot.me.id
+OWNER_NAME = ultroid_bot.me.first_name
+OWNER_ID = ultroid_bot.me.id
 
 
 async def setit(event, name, value):
