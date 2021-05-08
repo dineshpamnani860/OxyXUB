@@ -29,11 +29,11 @@ def start():
     print("Welcome to OxyX, lets start setting up!\n\n")
     print("Cloning the repository...\n\n")
     try:
-        os.system("git clone https://github.com/OxyNotOp/OxyXUB && cd OxyXUB")
+        os.system("git clone https://github.com/OxyNotOp/OxyXUB && cd Ultroid")
     except Exception as e:
         print(f"ERROR\n{str(e)}")
     print("\n\nDone")
-    os.system("cd OxyXUB")
+    os.system("cd Ultroid")
     clear_screen()
     print(a)
     print("\n\nLet's start!\n")
@@ -92,7 +92,7 @@ def start():
     clear_screen()
     print(a)
     print("\nStarting OxyX...")
-    os.system("python3 -m pyOxyX")
+    os.system("python3 -m pyUltroid")
 
 
 def do_input(var):
