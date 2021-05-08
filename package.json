@@ -1,5 +1,5 @@
 {
-  "name": "OxyXUB-vcbot",
+  "name": "ultroid-vcbot",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "test": "tsc --noEmit",
     "dev": "nodemon src/index.ts"
   },
-  "author": "OxyNotOp <OxyNotOp@protonmail.ch>",
+  "author": "TeamUltroid <teamultroid@protonmail.ch>",
   "license": "AGPL-3.0",
   "dependencies": {
     "@mapbox/node-pre-gyp": "^1.0.0",
