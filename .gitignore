@@ -1,18 +1,23 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
-
-# Other files and folders
-.settings/
-
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
-
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+.env
+venv/
+__pycache__
+BOT_TOKEN.session-journal
+BOT_TOKEN.session
+*.mp3
+*.webm
+*.webp
+*.mp4
+*.tgs
+logs-ultroid.txt
+.vscode/*
+ultroid-log.txt
+/*.jpg
+/*.png
+/*.mp4
+addons/
+ultroid.log
+target/npmlist.json
+node_modules
+glitch_me/
+.idea
+venv/
