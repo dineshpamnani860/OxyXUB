@@ -1,7 +1,7 @@
-# OxyX-UB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
-# PLease read the GNU Affero General Public License in <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# PLease read the GNU Affero General Public License in <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 bash resources/session/session.sh
