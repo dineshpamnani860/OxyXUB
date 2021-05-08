@@ -20,9 +20,9 @@ autopic_2: "Sem resultados encontrados para `{}`"
 autopic_3: "Tenho uma coleção `{}` relacionado à sua pesquisa !\nIniciando Autopic !"
 
 #inline
-inline_1: "[Suporte OxyX-UB](t.me/OxyX-UBsupport)\n\n **Menu de Ajuda {}.\n\n Plugins ~ {}**"
-inline_2: "[Suporte OxyX-UB](t.me/OxyX-UBsupport)\n\n **Menu De ajuda {}.\n\n Complementos ~ {}**"
-inline_3: "[Suporte OxyX-UB](t.me/OxyX-UBsupport)\n\n **Menu de ajuda {}.\n\n Complementos ~ {}\n\n Gᴏ Aɴᴅ Aᴅᴅ `ADDONS` Vᴀʀ Wɪᴛʜ Vᴀʟᴜᴇ Tʀᴜᴇ**"
+inline_1: "[Suporte OxyXUB](t.me/OxyXUBsupport)\n\n **Menu de Ajuda {}.\n\n Plugins ~ {}**"
+inline_2: "[Suporte OxyXUB](t.me/OxyXUBsupport)\n\n **Menu De ajuda {}.\n\n Complementos ~ {}**"
+inline_3: "[Suporte OxyXUB](t.me/OxyXUBsupport)\n\n **Menu de ajuda {}.\n\n Complementos ~ {}\n\n Gᴏ Aɴᴅ Aᴅᴅ `ADDONS` Vᴀʀ Wɪᴛʜ Vᴀʟᴜᴇ Tʀᴜᴇ**"
 inline_4: "** Bᴏᴛ Oғ {}\n\nMᴀɪɴ Mᴇɴᴜ\n\nPʟᴜɢɪɴs ~ {}\nAᴅᴅᴏɴs ~ {}\nTᴏᴛᴀʟ Cᴏᴍᴍᴀɴᴅs ~ {}**"
 inline_5: "**O menu foi fechado**"
 
@@ -45,8 +45,8 @@ afk_7: "Está AFK pelo motivo {}"
 afk_8: "Está AFK."
 
 #bot
-alive_1: "**O OxyX-UB Userbot...**\n\n **{}**\n\n ┏━━━━━━━━━━━━━━━━━━━━━\n ┣ **Proprietário** - `{}`\n ┣ **Versão** - `{}`\n ┣ **Tempo de atividade** - `{}`\n ┣ **Python** - `{}`\n ┣ **Teleton** - `{}`\n ┣ **Filial** - `{}`\n ┗━━━━━━━━━━━━━━━━━━━━━"
-log: "**Heroku** Mudanças OxyX-UB.\nColado [aqui]({}) também!"
+alive_1: "**O OxyXUB Userbot...**\n\n **{}**\n\n ┏━━━━━━━━━━━━━━━━━━━━━\n ┣ **Proprietário** - `{}`\n ┣ **Versão** - `{}`\n ┣ **Tempo de atividade** - `{}`\n ┣ **Python** - `{}`\n ┣ **Teleton** - `{}`\n ┣ **Filial** - `{}`\n ┗━━━━━━━━━━━━━━━━━━━━━"
+log: "**Heroku** Mudanças OxyXUB.\nColado [aqui]({}) também!"
 ping: "**Pong !!** `{}ms`\n**Tempo de atividade** - `{}`"
 usage: "**⚙️ Uso Dyno  ⚙️**:\n\n -> ` Uso Dyno  for`  **{}**:\n •  `{}`**h**  `{}`**m** **|**  [`{}`**%**]\n\n -> `Dyno horas de cota restando esse mês `:\n •  `{}`**h**  `{}`**m** **|**  [`{}`**%**]\n\n **Espaço Total em Disco: {}\n\n** **Usado: {}  Livre: {}\n\n** **📊Uso De Data📊\n\nUpload: {}\nDown: {}\n\n** **CPU: {}%\nRAM: {}%\nDISK: {}%**"
 shutdown: "Adeus {}.\n`Desligando...`"
@@ -115,17 +115,17 @@ sf_14: "SuperFBan concluído.\nFeds totais - {}.\nExcluído - {}.\n Afetado {} f
 sf_15: "Iniciando FedBan em massa..."
 sf_16: "SuperUnFBan concluído.\nFeds totais - {}.\nExcluído - {}.\n Feds {} afetados.\n#TB"
 sf_17: "`Dê-me a identidade de alguém ou responda à mensagem de alguém para verificar seu fedstat.`"
-sf_18: "Lista de feds {} foi banida em.\n\nColetados usando OxyX-UB."
+sf_18: "Lista de feds {} foi banida em.\n\nColetados usando OxyXUB."
 sf_19: "**Erro**\n `Desbloquear` @MissRose_Bot `e tente novamente!"
 sf_20: "`Extraindo informações...`"
-sf_21: "\n\nFedInfo Extraído por OxyX-UB"
+sf_21: "\n\nFedInfo Extraído por OxyXUB"
 
 #gdrive
 gdrive_1: "`Você já autorizou com o Google Drive`"
 gdrive_2: "Ir [here](https://console.developers.google.com/flows/enableapi?apiid=drive) e pegue o seu `GDRIVE_CLIENT_ID` e `GDRIVE_CLIENT_SECRET`\n\n Mande seu GDRIVE_CLIENT_ID e GDRIVE_CLIENT_SECRET como isso.\n`GDRIVE_CLIENT_ID GDRIVE_CLIENT_SECRET` separados por espaço."
 gdrive_3: "`Id de cliente errado`"
-gdrive_4: "`Algo deu errado! Envie `/auth` novamente.\nSe o mesmo acontecer entre em contato `@TheOxyX-UB"
-gdrive_5: "`Sucesso!\nVocê está pronto para usar o Google Drive com OxyX-UB Userbot.`"
+gdrive_4: "`Algo deu errado! Envie `/auth` novamente.\nSe o mesmo acontecer entre em contato `@TheOxyXUB"
+gdrive_5: "`Sucesso!\nVocê está pronto para usar o Google Drive com OxyXUB Userbot.`"
 gdrive_6: "`Ir para `{}` e envia ``/auth.`"
 gdrive_7: "**O upload do Arquivo No G-Drive Foi bem sucedido :**\n\n[{}]({})"
 

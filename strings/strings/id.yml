@@ -19,13 +19,13 @@ autopic_2: "Tidak ada hasil yang ditemukan untuk `{}`"
 autopic_3: "Mendapatkan koleksi `{}` yang terkait dengan penelusuran Anda !\nMemulai Autopic !"
 
 # inline
-inline_1: "[Uʟᴛʀᴏɪᴅ Sᴜᴘᴘᴏʀᴛ](t.me/OxyX-UBsupport)\n\n
+inline_1: "[Uʟᴛʀᴏɪᴅ Sᴜᴘᴘᴏʀᴛ](t.me/OxyXUBsupport)\n\n
 **Hᴇʟᴘ Mᴇɴᴜ Oғ {}.\n\n
 Pʟᴜɢɪɴs ~ {}**"
-inline_2: "[Uʟᴛʀᴏɪᴅ Sᴜᴘᴘᴏʀᴛ](t.me/OxyX-UBsupport)\n\n
+inline_2: "[Uʟᴛʀᴏɪᴅ Sᴜᴘᴘᴏʀᴛ](t.me/OxyXUBsupport)\n\n
 **Hᴇʟᴘ Mᴇɴᴜ Oғ {}.\n\n
 Aᴅᴅᴏɴs ~ {}**"
-inline_3: "[Uʟᴛʀᴏɪᴅ Sᴜᴘᴘᴏʀᴛ](t.me/OxyX-UBsupport)\n\n
+inline_3: "[Uʟᴛʀᴏɪᴅ Sᴜᴘᴘᴏʀᴛ](t.me/OxyXUBsupport)\n\n
 **Hᴇʟᴘ Mᴇɴᴜ Oғ {}.\n\n
 Aᴅᴅᴏɴs ~ {}\n\n
 Pᴇʀɢɪ Dᴀɴ Tᴀᴍʙᴀʜᴋᴀɴ `ADDONS` Vᴀʀ Dᴇɴɢᴀɴ Vᴀʟᴜᴇ Tʀᴜᴇ**"
@@ -58,7 +58,7 @@ afk_7: "Lagi Afk karena {}"
 afk_8: "Lagi AFK."
 
 # bot
-alive_1: "**The OxyX-UB Userbot...**\n\n
+alive_1: "**The OxyXUB Userbot...**\n\n
 **{}**\n\n
 ┏━━━━━━━━━━━━━━━━━━━━━\n
 ┣ **Pemilik** - `{}`\n
@@ -68,7 +68,7 @@ alive_1: "**The OxyX-UB Userbot...**\n\n
 ┣ **Telethon** - `{}`\n
 ┣ **Branch** - `{}`\n
 ┗━━━━━━━━━━━━━━━━━━━━━"
-log: "**Heroku** OxyX-UB Logs.\nPasted [here]({}) too!"
+log: "**Heroku** OxyXUB Logs.\nPasted [here]({}) too!"
 ping: "**Pong !!** `{}ms`\n**Uptime** - `{}`"
 usage: "**⚙️ Dyno Usage ⚙️**:\n\n
  -> `Pemakaian Dyno Untuk`  **{}**:\n
@@ -147,18 +147,18 @@ sf_14: "SuperFBan Selesai.\nTotal Feds - {}.\nPengecualian - {}.\n Pengaruh {} f
 sf_15: "Memulai Mass-UnFedBan..."
 sf_16: "SuperUnFBan Selesai.\nTotal Feds - {}.\nPengecualian - {}.\n Pengaruh {} feds.\n#TB"
 sf_17: "`Beri saya id seseorang, atau balas pesan seseorang untuk memeriksa fedstatnya.`"
-sf_18: "Daftar feds {} telah dibanned.\n\nDikumpulkan menggunakan OxyX-UB."
+sf_18: "Daftar feds {} telah dibanned.\n\nDikumpulkan menggunakan OxyXUB."
 sf_19: "**Kesalahan**\n `Unblock` @MissRose_Bot `dan coba lagi!"
 sf_20: "`Mengekstrak informasi...`"
-sf_21: "\n\nFedInfo diekstrak oleh OxyX-UB"
+sf_21: "\n\nFedInfo diekstrak oleh OxyXUB"
 
 # gdrive
 gdrive_1: "`Anda telah memberi otorisasi dengan Google Drive`"
 gdrive_2: "Pergi [kesini](https://console.developers.google.com/flows/enableapi?apiid=drive) dan dapatkan `GDRIVE_CLIENT_ID` dan `GDRIVE_CLIENT_SECRET` kamu\n\n
 Kirim GDRIVE_CLIENT_ID dan GDRIVE_CLIENT_SECRET kamu seperti ini.\n`GDRIVE_CLIENT_ID GDRIVE_CLIENT_SECRET` dipisahkan dengan spasi."
 gdrive_3: "`Client Id salah anjim`"
-gdrive_4: "`Terjadi kesalahan! Kirim `/auth` lagi.\nJika masih sama, harap hubungi `@TheOxyX-UB"
-gdrive_5: "`Berhasil!\nAnda siap untuk menggunakan Google Drive dengan OxyX-UB Userbot.`"
+gdrive_4: "`Terjadi kesalahan! Kirim `/auth` lagi.\nJika masih sama, harap hubungi `@TheOxyXUB"
+gdrive_5: "`Berhasil!\nAnda siap untuk menggunakan Google Drive dengan OxyXUB Userbot.`"
 gdrive_6: "`Pergi ke `{}` dan kirim ``/auth.`"
 gdrive_7: "**File Berhasil Diupload kedalam G-Drive :**\n\n[{}]({})"
 
