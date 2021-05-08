@@ -7,17 +7,17 @@
 
 <b>A stable pluggable Telegram userbot + vc music bot, based on Telethon.</b>   
 
-[![Stars](https://img.shields.io/github/stars/OxyNotOp/OxyX-UB?style=flat-square&color=yellow)](https://github.com/OxyNotOp/OxyX-UB/stargazers)
-[![Forks](https://img.shields.io/github/forks/OxyNotOp/OxyX-UB?style=flat-square&color=orange)](https://github.com/OxyNotOp/OxyX-UB/fork)
-[![Size](https://img.shields.io/github/repo-size/OxyNotOp/OxyX-UB?style=flat-square&color=green)](https://github.com/OxyNotOp/OxyX-UB/)   
+[![Stars](https://img.shields.io/github/stars/OxyNotOp/OxyXUB?style=flat-square&color=yellow)](https://github.com/OxyNotOp/OxyXUB/stargazers)
+[![Forks](https://img.shields.io/github/forks/OxyNotOp/OxyXUB?style=flat-square&color=orange)](https://github.com/OxyNotOp/OxyXUB/fork)
+[![Size](https://img.shields.io/github/repo-size/OxyNotOp/OxyXUB?style=flat-square&color=green)](https://github.com/OxyNotOp/OxyXUB/)   
 [![Python](https://img.shields.io/badge/Python-v3.9-blue)](https://www.python.org/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/OxyNotOp/OxyX-UB/graphs/commit-activity)
-[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/OxyNotOp/OxyX-UB)   
-[![Contributors](https://img.shields.io/github/contributors/OxyNotOp/OxyX-UB?style=flat-square&color=green)](https://github.com/OxyNotOp/OxyX-UB/graphs/contributors)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/OxyNotOp/OxyXUB/graphs/commit-activity)
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/OxyNotOp/OxyXUB)   
+[![Contributors](https://img.shields.io/github/contributors/OxyNotOp/OxyXUB?style=flat-square&color=green)](https://github.com/OxyNotOp/OxyXUB/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
-[![License](https://img.shields.io/badge/License-AGPL-blue)](https://github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE)   
-[![HitCount](http://hits.dwyl.com/OxyNotOp/OxyNotOp/OxyX-UB.svg)](http://hits.dwyl.com/OxyNotOp/OxyNotOp/OxyX-UB)   
-[![Sparkline](https://stars.medv.io/OxyNotOp/OxyX-UB.svg)](https://stars.medv.io/OxyNotOp/OxyX-UB)
+[![License](https://img.shields.io/badge/License-AGPL-blue)](https://github.com/OxyNotOp/OxyXUB/blob/main/LICENSE)   
+[![HitCount](http://hits.dwyl.com/OxyNotOp/OxyNotOp/OxyXUB.svg)](http://hits.dwyl.com/OxyNotOp/OxyNotOp/OxyXUB)   
+[![Sparkline](https://stars.medv.io/OxyNotOp/OxyXUB.svg)](https://stars.medv.io/OxyNotOp/OxyXUB)
 
 ----
 
@@ -26,7 +26,7 @@
 - [Local Machine](#Deploy-Locally)
 
 # Documentation 
-[![Document](https://img.shields.io/badge/Documentation-OxyX-UB-blue)](http://OxyX-UB.tech/)
+[![Document](https://img.shields.io/badge/Documentation-OxyXUB-blue)](http://OxyXUB.tech/)
 
 # Tutorial 
 - Full Tutorial - [![Full Tutorial](https://img.shields.io/badge/Watch%20Now-blue)](https://www.youtube.com/watch?v=9wF7k9qA0Q4)
@@ -61,7 +61,7 @@ Different ways to get your `SESSION`:
 Made with 💕 by [OxyNotOp](https://t.me/OxyXsupport). <br />
 
 # License
-OxyX-UB is licensed under [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html) v3 or later.
+OxyXUB is licensed under [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html) v3 or later.
 
 [![License](https://www.gnu.org/graphics/agplv3-155x51.png)](LICENSE)
 

@@ -7,9 +7,9 @@
         "telegram",
         "userbot",
         "python",
-        "ultroid"
+        "OxyXUB"
     ],
-    "repository": "https://github.com/OxyNotOp/OxyX-UB",
+    "repository": "https://github.com/OxyNotOp/OxyXUB",
     "website": "https://OxyNotOp.tech",
     "success_url": "https://t.me/OxyXsupport",
     "stack": "container",
