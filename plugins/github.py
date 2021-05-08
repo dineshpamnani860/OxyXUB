@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -18,7 +18,7 @@ import requests
 from . import *
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="github (.*)",
 )
 async def gitsearch(event):
@@ -59,7 +59,7 @@ async def gitsearch(event):
 **Following** - {ufollowing}
 """
     await xx.delete()
-    await OxyXUB_bot.send_file(
+    await ultroid_bot.send_file(
         event.chat_id,
         upic,
         caption=fullusr,

@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -67,7 +67,7 @@ async def inline_handler(event):
         await event.answer(plugs)
     else:
         try:
-            OxyXUB = builder.document(
+            ultroid = builder.document(
                 f"./plugins/{input_str}.py",
                 title=f"{input_str}.py",
                 description=f"Module {input_str} Found",
@@ -82,10 +82,10 @@ async def inline_handler(event):
                     ],
                 ],
             )
-            await event.answer([OxyXUB])
+            await event.answer([ultroid])
             return
         except BaseException:
-            OxyXUBcode = builder.article(
+            ultroidcode = builder.article(
                 title=f"Module {input_str}.py Not Found",
                 description=f"No Such Module",
                 text=f"No Module Named {input_str}.py",
@@ -99,18 +99,18 @@ async def inline_handler(event):
                     ],
                 ],
             )
-            await event.answer([OxyXUBcode])
+            await event.answer([ultroidcode])
             return
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="install",
 )
 async def install(event):
     await safeinstall(event)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern=r"unload ?(.*)",
 )
 async def unload(event):
@@ -133,7 +133,7 @@ async def unload(event):
         return await eod(event, f"**Nᴏ Pʟᴜɢɪɴ Nᴀᴍᴇᴅ** `{shortname}`", time=3)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern=r"uninstall ?(.*)",
 )
 async def uninstall(event):
@@ -157,7 +157,7 @@ async def uninstall(event):
         return await eod(event, f"**Nᴏ Pʟᴜɢɪɴ Nᴀᴍᴇᴅ** `{shortname}`", time=3)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern=r"load ?(.*)",
 )
 async def load(event):

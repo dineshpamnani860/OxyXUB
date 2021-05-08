@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -40,7 +40,7 @@ from telethon.utils import get_display_name
 from . import *
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="tag(on|off|all|bots|rec|admins|owner)?(.*)",
     groups_only=True,
 )

@@ -1,23 +1,23 @@
 # OxyX - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Copyright (C) 2020 TeamOxy
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
 
 import time
 
-from pyOxyXUB import *
-from pyOxyXUB.dB import *
-from pyOxyXUB.dB.core import *
-from pyOxyXUB.functions.all import *
-from pyOxyXUB.functions.broadcast_db import *
-from pyOxyXUB.functions.gban_mute_db import *
-from pyOxyXUB.functions.goodbye_db import *
-from pyOxyXUB.functions.google_image import googleimagesdownload
-from pyOxyXUB.functions.sudos import *
-from pyOxyXUB.functions.welcome_db import *
-from pyOxyXUB.utils import *
+from pyUltroid import *
+from pyUltroid.dB import *
+from pyUltroid.dB.core import *
+from pyUltroid.functions.all import *
+from pyUltroid.functions.broadcast_db import *
+from pyUltroid.functions.gban_mute_db import *
+from pyUltroid.functions.goodbye_db import *
+from pyUltroid.functions.google_image import googleimagesdownload
+from pyUltroid.functions.sudos import *
+from pyUltroid.functions.welcome_db import *
+from pyUltroid.utils import *
 
 from strings import get_string
 
@@ -29,9 +29,9 @@ except ModuleNotFoundError:
     )
 
 start_time = time.time()
-OxyXUB_version = "v0.0.5"
-OWNER_NAME = OxyXUB_bot.me.first_name
-OWNER_ID = OxyXUB_bot.me.id
+ultroid_version = "v0.0.5"
+OWNER_NAME = ultroid_bot.me.first_name
+OWNER_ID = ultroid_bot.me.id
 
 
 def grt(seconds: int) -> str:

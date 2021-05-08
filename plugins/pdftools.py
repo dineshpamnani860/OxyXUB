@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -41,7 +41,7 @@ if not os.path.exists("pdf/"):
     os.makedirs("pdf/")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="pdf ?(.*)",
 )
 async def pdfseimg(event):
@@ -91,7 +91,7 @@ async def pdfseimg(event):
         await xx.delete()
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="pdtext ?(.*)",
 )
 async def pdfsetxt(event):
@@ -156,7 +156,7 @@ async def pdfsetxt(event):
     await xx.delete()
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="pdscan ?(.*)",
 )
 async def imgscan(event):
@@ -213,7 +213,7 @@ async def imgscan(event):
     os.remove(scann)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="pdsave ?(.*)",
 )
 async def savepdf(event):
@@ -271,7 +271,7 @@ async def savepdf(event):
         os.remove("o.png")
     elif ultt.endswith(".pdf"):
         a = dani_ck("pdf/scan.pdf")
-        await OxyXUB_bot.download_media(ok, a)
+        await ultroid_bot.download_media(ok, a)
         await eor(
             event,
             f"Done, Now Reply Another Image/pdf if completed then use {hndlr}pdsend to merge nd send all as pdf",
@@ -281,7 +281,7 @@ async def savepdf(event):
     os.remove(ultt)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="pdsend ?(.*)",
 )
 async def sendpdf(event):

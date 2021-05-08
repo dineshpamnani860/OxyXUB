@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 from telethon import custom, events
 from telethon.utils import get_display_name
@@ -11,7 +11,7 @@ from telethon.utils import get_display_name
 from . import *
 
 
-@OxyXUB_bot.on(
+@ultroid_bot.on(
     events.NewMessage(
         incoming=True,
         func=lambda e: (e.mentioned),
@@ -23,10 +23,10 @@ async def all_messages_catcher(e):
             NEEDTOLOG = int(udB.get("TAG_LOG"))
         except Exception:
             return LOGS.warning("you given Wrong Grp/Channel ID in TAG_LOG.")
-        x = await OxyXUB_bot.get_entity(e.sender_id)
+        x = await ultroid_bot.get_entity(e.sender_id)
         if x.bot or x.verified:
             return
-        y = await OxyXUB_bot.get_entity(e.chat_id)
+        y = await ultroid_bot.get_entity(e.chat_id)
         if y.username:
             yy = f"[{get_display_name(y)}](https://t.me/{y.username})"
         else:
@@ -57,7 +57,7 @@ async def all_messages_catcher(e):
             else:
                 cap = get_string("tagnot_2").format(xx, yy, msg)
             try:
-                await OxyXUB_bot.send_message(NEEDTOLOG, cap, link_preview=False)
+                await ultroid_bot.send_message(NEEDTOLOG, cap, link_preview=False)
             except BaseException:
                 pass
     else:

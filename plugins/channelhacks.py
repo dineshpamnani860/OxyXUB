@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# OxyX-UB - UserBot
+# Copyright (C) 2020 TeamOxy
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available
@@ -38,12 +38,12 @@
 
 import asyncio
 
-from pyOxyXUB.functions.ch_db import *
+from pyUltroid.functions.ch_db import *
 
 from . import *
 
 
-@OxyXUB_bot.on(events.NewMessage())
+@ultroid_bot.on(events.NewMessage())
 async def _(e):
     if not udB.get("AUTOPOST") == "True":
         return
@@ -56,16 +56,16 @@ async def _(e):
     for ys in y:
         try:
             if e.text and not e.media:
-                await OxyXUB_bot.send_message(int(ys), e.text)
+                await ultroid_bot.send_message(int(ys), e.text)
             elif e.media and e.text:
-                await OxyXUB_bot.send_file(int(ys), e.media, caption=e.text)
+                await ultroid_bot.send_file(int(ys), e.media, caption=e.text)
             else:
-                await OxyXUB_bot.send_file(int(ys), e.media)
+                await ultroid_bot.send_file(int(ys), e.media)
         except Exception as e:
-            await OxyXUB_bot.send_message(bot.me.id, str(e))
+            await ultroid_bot.send_message(bot.me.id, str(e))
 
 
-@OxyXUB_cmd(pattern="shift (.*)")
+@ultroid_cmd(pattern="shift (.*)")
 async def _(e):
     x = e.pattern_match.group(1)
     z = await eor(e, "`processing..`")
@@ -74,7 +74,7 @@ async def _(e):
         c = int(a)
     except Exception:
         try:
-            c = (await OxyXUB_bot.get_entity(a)).id
+            c = (await ultroid_bot.get_entity(a)).id
         except Exception:
             await z.edit("invalid Channel given")
             return
@@ -82,20 +82,20 @@ async def _(e):
         d = int(b)
     except Exception:
         try:
-            d = (await OxyXUB_bot.get_entity(b)).id
+            d = (await ultroid_bot.get_entity(b)).id
         except Exception:
             await z.edit("invalid Channel given")
             return
-    async for msg in OxyXUB_bot.iter_messages(int(c), reverse=True):
+    async for msg in ultroid_bot.iter_messages(int(c), reverse=True):
         try:
             await asyncio.sleep(0.7)
-            await OxyXUB_bot.send_message(int(d), msg)
+            await ultroid_bot.send_message(int(d), msg)
         except BaseException:
             pass
     await z.edit("Done")
 
 
-@OxyXUB_cmd(pattern="asource (.*)")
+@ultroid_cmd(pattern="asource (.*)")
 async def source(e):
     x = e.pattern_match.group(1)
     try:
@@ -113,7 +113,7 @@ async def source(e):
         await eor(e, "Source channel already added")
 
 
-@OxyXUB_cmd(pattern="dsource ?(.*)")
+@ultroid_cmd(pattern="dsource ?(.*)")
 async def dd(event):
     chat_id = event.pattern_match.group(1)
     x = await eor(event, "processing")
@@ -146,7 +146,7 @@ async def dd(event):
         await x.delete()
 
 
-@OxyXUB_cmd(pattern="listsource")
+@ultroid_cmd(pattern="listsource")
 async def list_all(event):
     x = await eor(event, "`Calculating...`")
     channels = get_source_channels()
@@ -157,7 +157,7 @@ async def list_all(event):
     for channel in channels:
         name = ""
         try:
-            name = (await OxyXUB.get_entity(int(channel))).title
+            name = (await ultroid.get_entity(int(channel))).title
         except BaseException:
             name = ""
         msg += f"=> **{name}** [`{channel}`]\n"
@@ -166,7 +166,7 @@ async def list_all(event):
         MSG = msg.replace("*", "").replace("`", "")
         with io.BytesIO(str.encode(MSG)) as out_file:
             out_file.name = "channels.txt"
-            await OxyXUB_bot.send_file(
+            await ultroid_bot.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -179,7 +179,7 @@ async def list_all(event):
         await x.edit(msg)
 
 
-@OxyXUB_cmd(pattern="adest (.*)")
+@ultroid_cmd(pattern="adest (.*)")
 async def destination(e):
     x = e.pattern_match.group(1)
     try:
@@ -197,7 +197,7 @@ async def destination(e):
         await eor(e, "Destination channel already added")
 
 
-@OxyXUB_cmd(pattern="ddest ?(.*)")
+@ultroid_cmd(pattern="ddest ?(.*)")
 async def dd(event):
     chat_id = event.pattern_match.group(1)
     x = await eor(event, "processing")
@@ -230,7 +230,7 @@ async def dd(event):
         await x.delete()
 
 
-@OxyXUB_cmd(pattern="listdest")
+@ultroid_cmd(pattern="listdest")
 async def list_all(event):
     x = await eor(event, "`Calculating...`")
     channels = get_destinations()
@@ -241,7 +241,7 @@ async def list_all(event):
     for channel in channels:
         name = ""
         try:
-            name = (await OxyXUB.get_entity(int(channel))).title
+            name = (await ultroid.get_entity(int(channel))).title
         except BaseException:
             name = ""
         msg += f"=> **{name}** [`{channel}`]\n"
@@ -250,7 +250,7 @@ async def list_all(event):
         MSG = msg.replace("*", "").replace("`", "")
         with io.BytesIO(str.encode(MSG)) as out_file:
             out_file.name = "channels.txt"
-            await OxyXUB_bot.send_file(
+            await ultroid_bot.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,

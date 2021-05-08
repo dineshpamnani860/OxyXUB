@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -17,7 +17,7 @@
     Redis Set Value.
     e.g :
     `{i}setredis hi there`
-    `{i}setredis hi there | OxyXUB here`
+    `{i}setredis hi there | ultroid here`
 
 • `{i}getredis key`
     Redis Get Value
@@ -37,7 +37,7 @@ import re
 from . import *
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="setredis ?(.*)",
 )
 async def _(ult):
@@ -57,7 +57,7 @@ async def _(ult):
         await ok.edit("`Something Went Wrong`")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="getredis ?(.*)",
 )
 async def _(ult):
@@ -72,7 +72,7 @@ async def _(ult):
         await ok.edit("`Something Went Wrong`")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="delredis ?(.*)",
 )
 async def _(ult):
@@ -85,7 +85,7 @@ async def _(ult):
         await ok.edit("`Something Went Wrong`")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="renredis ?(.*)",
 )
 async def _(ult):
@@ -107,7 +107,7 @@ async def _(ult):
         await ok.edit("Key not found")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="getkeys$",
 )
 async def _(ult):
@@ -122,7 +122,7 @@ async def _(ult):
     await ok.edit(f"**List of Redis Keys :**\n{msg}")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="redisusage$",
 )
 async def _(ult):

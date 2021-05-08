@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -23,13 +23,13 @@
 
 import re
 
-from pyOxyXUB.functions.blacklist_db import *
+from pyUltroid.functions.blacklist_db import *
 from telethon.tl.types import ChannelParticipantsAdmins
 
 from . import *
 
 
-@OxyXUB_cmd(pattern="blacklist ?(.*)")
+@ultroid_cmd(pattern="blacklist ?(.*)")
 async def af(e):
     if e.is_group:
         if not e._chat.admin_rights:
@@ -43,7 +43,7 @@ async def af(e):
     await eor(e, f"Done : `{wrd}` Blacklisted here.")
 
 
-@OxyXUB_cmd(pattern="remblacklist ?(.*)")
+@ultroid_cmd(pattern="remblacklist ?(.*)")
 async def rf(e):
     if e.is_group:
         if not e._chat.admin_rights:
@@ -56,7 +56,7 @@ async def rf(e):
     await eor(e, f"Done : `{wrd}` Removed from Blacklist.")
 
 
-@OxyXUB_cmd(pattern="listblacklist")
+@ultroid_cmd(pattern="listblacklist")
 async def lsnote(e):
     if e.is_group:
         if not e._chat.admin_rights:
@@ -69,7 +69,7 @@ async def lsnote(e):
         await eor(e, "No Blacklist word Found Here")
 
 
-@OxyXUB_bot.on(events.NewMessage(incoming=True))
+@ultroid_bot.on(events.NewMessage(incoming=True))
 async def bl(e):
     chat = e.chat_id
     x = get_blacklist(int(chat))
@@ -81,7 +81,7 @@ async def bl(e):
             for c in xx:
                 kk = re.search(str(c), str(x), flags=re.IGNORECASE)
             if kk:
-                async for l in OxyXUB_bot.iter_participants(
+                async for l in ultroid_bot.iter_participants(
                     e.chat_id, filter=ChannelParticipantsAdmins
                 ):
                     if l.id == e.sender_id:
@@ -90,7 +90,7 @@ async def bl(e):
         else:
             k = re.search(xx, x, flags=re.IGNORECASE)
             if k:
-                async for l in OxyXUB_bot.iter_participants(
+                async for l in ultroid_bot.iter_participants(
                     e.chat_id, filter=ChannelParticipantsAdmins
                 ):
                     if l.id == e.sender_id:

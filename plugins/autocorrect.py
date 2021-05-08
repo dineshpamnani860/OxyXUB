@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available
@@ -22,7 +22,7 @@ from . import *
 tr = Translator()
 
 
-@OxyXUB_cmd(pattern="autocorrect")
+@ultroid_cmd(pattern="autocorrect")
 async def acc(e):
     if Redis("AUTOCORRECT") != "True":
         udB.set("AUTOCORRECT", "True")
@@ -32,7 +32,7 @@ async def acc(e):
         await eor(e, "AUTOCORRECT Feature Off")
 
 
-@OxyXUB_bot.on(events.NewMessage(outgoing=True))
+@ultroid_bot.on(events.NewMessage(outgoing=True))
 async def gramme(event):
     if Redis("AUTOCORRECT") != "True":
         return

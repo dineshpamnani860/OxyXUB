@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -29,7 +29,7 @@ from telethon.tl.functions.channels import DeleteChannelRequest
 from . import *
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="delchat$",
     groups_only=True,
 )
@@ -44,7 +44,7 @@ async def _(e):
     await e.client.send_message(Var.LOG_CHANNEL, f"#Deleted\nDeleted {e.chat_id}")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="getlink$",
     groups_only=True,
 )
@@ -59,7 +59,7 @@ async def _(e):
     await eod(xx, f"Link:- {r.link}")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="create (b|g|c)(?: |$)(.*)",
 )
 async def _(e):
@@ -97,7 +97,7 @@ async def _(e):
             r = await e.client(
                 CreateChannelRequest(
                     title=group_name,
-                    about="Join @OxyNotOp",
+                    about="Join @TeamUltroid",
                     megagroup=False if type_of_group == "c" else True,
                 ),
             )

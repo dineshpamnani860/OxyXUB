@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -35,7 +35,7 @@ from telethon import events
 from . import *
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="ungban ?(.*)",
 )
 async def _(e):
@@ -74,7 +74,7 @@ async def _(e):
     )
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="gban ?(.*)",
 )
 async def _(e):
@@ -98,7 +98,7 @@ async def _(e):
         return await eod(xx, "`Reply to some msg or add their id.`", tome=5)
     name = (await e.client.get_entity(userid)).first_name
     chats = 0
-    if userid == OxyXUB_bot.uid:
+    if userid == ultroid_bot.uid:
         return await eod(xx, "`I can't gban myself.`", time=3)
     if str(userid) in DEVLIST:
         return await eod(xx, "`I can't gban my Developers.`", time=3)
@@ -121,7 +121,7 @@ async def _(e):
     )
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="gcast ?(.*)",
 )
 async def gcast(event):
@@ -133,18 +133,18 @@ async def gcast(event):
     kk = await eor(event, "`Globally Broadcasting Msg...`")
     er = 0
     done = 0
-    async for x in OxyXUB_bot.iter_dialogs():
+    async for x in ultroid_bot.iter_dialogs():
         if x.is_group:
             chat = x.id
             try:
                 done += 1
-                await OxyXUB_bot.send_message(chat, msg)
+                await ultroid_bot.send_message(chat, msg)
             except BaseException:
                 er += 1
     await kk.edit(f"Done in {done} chats, error in {er} chat(s)")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="gucast ?(.*)",
 )
 async def gucast(event):
@@ -156,18 +156,18 @@ async def gucast(event):
     kk = await eor(event, "`Globally Broadcasting Msg...`")
     er = 0
     done = 0
-    async for x in OxyXUB_bot.iter_dialogs():
+    async for x in ultroid_bot.iter_dialogs():
         if x.is_user and not x.entity.bot:
             chat = x.id
             try:
                 done += 1
-                await OxyXUB_bot.send_message(chat, msg)
+                await ultroid_bot.send_message(chat, msg)
             except BaseException:
                 er += 1
     await kk.edit(f"Done in {done} chats, error in {er} chat(s)")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="gkick ?(.*)",
 )
 async def gkick(e):
@@ -191,21 +191,21 @@ async def gkick(e):
         return await eod(xx, "`Reply to some msg or add their id.`", time=5)
     name = (await e.client.get_entity(userid)).first_name
     chats = 0
-    if userid == OxyXUB_bot.uid:
+    if userid == ultroid_bot.uid:
         return await eod(xx, "`I can't gkick myself.`", time=3)
     if str(userid) in DEVLIST:
         return await eod(xx, "`I can't gkick my Developers.`", time=3)
     async for gkick in e.client.iter_dialogs():
         if gkick.is_group or gkick.is_channel:
             try:
-                await OxyXUB_bot.kick_participant(gkick.id, userid)
+                await ultroid_bot.kick_participant(gkick.id, userid)
                 chats += 1
             except BaseException:
                 pass
     await xx.edit(f"`Gkicked` [{name}](tg://user?id={userid}) `in {chats} chats.`")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="gmute ?(.*)",
 )
 async def _(e):
@@ -229,7 +229,7 @@ async def _(e):
         return await eod(xx, "`Reply to some msg or add their id.`", tome=5)
     name = (await e.client.get_entity(userid)).first_name
     chats = 0
-    if userid == OxyXUB_bot.uid:
+    if userid == ultroid_bot.uid:
         return await eod(xx, "`I can't gmute myself.`", time=3)
     if str(userid) in DEVLIST:
         return await eod(xx, "`I can't gmute my Developers.`", time=3)
@@ -246,7 +246,7 @@ async def _(e):
     await xx.edit(f"`Gmuted` [{name}](tg://user?id={userid}) `in {chats} chats.`")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="ungmute ?(.*)",
 )
 async def _(e):
@@ -283,7 +283,7 @@ async def _(e):
     await xx.edit(f"`Ungmuted` [{name}](tg://user?id={userid}) `in {chats} chats.`")
 
 
-@OxyXUB_bot.on(events.ChatAction)
+@ultroid_bot.on(events.ChatAction)
 async def _(e):
     if e.user_joined or e.added_by:
         user = await e.get_user()

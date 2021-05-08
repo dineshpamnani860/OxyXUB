@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -22,14 +22,14 @@
 """
 import os
 
-from pyOxyXUB.functions.snips_db import *
+from pyUltroid.functions.snips_db import *
 from telegraph import upload_file as uf
 from telethon.utils import pack_bot_file_id
 
 from . import *
 
 
-@OxyXUB_cmd(pattern="addsnip ?(.*)")
+@ultroid_cmd(pattern="addsnip ?(.*)")
 async def an(e):
     wrd = (e.pattern_match.group(1)).lower()
     wt = await e.get_reply_message()
@@ -63,7 +63,7 @@ async def an(e):
     await eor(e, f"Done : snip `${wrd}` Saved.")
 
 
-@OxyXUB_cmd(pattern="remsnip ?(.*)")
+@ultroid_cmd(pattern="remsnip ?(.*)")
 async def rs(e):
     wrd = (e.pattern_match.group(1)).lower()
     if not wrd:
@@ -74,7 +74,7 @@ async def rs(e):
     await eor(e, f"Done : snip `${wrd}` Removed.")
 
 
-@OxyXUB_cmd(pattern="listsnip")
+@ultroid_cmd(pattern="listsnip")
 async def lsnote(e):
     x = list_snip()
     if x:
@@ -84,7 +84,7 @@ async def lsnote(e):
         await eor(e, "No Snips Found Here")
 
 
-@OxyXUB_bot.on(events.NewMessage(outgoing=True))
+@ultroid_bot.on(events.NewMessage(outgoing=True))
 async def notes(e):
     xx = (e.text).lower()
     if not xx.startswith("$"):
@@ -102,7 +102,7 @@ async def notes(e):
             if rep:
                 await rep.reply(msg, file=media)
             else:
-                await OxyXUB_bot.send_message(e.chat_id, msg, file=media)
+                await ultroid_bot.send_message(e.chat_id, msg, file=media)
                 await e.delete()
 
 

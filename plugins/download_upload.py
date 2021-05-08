@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -23,7 +23,7 @@ from datetime import datetime as dt
 from . import *
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="dl ?(.*)",
 )
 async def download(event):
@@ -77,7 +77,7 @@ async def download(event):
         await eod(xx, f"Downloaded `{o}` in `0 second(s)`")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="ul ?(.*)",
 )
 async def download(event):
@@ -110,7 +110,7 @@ async def download(event):
             return await eod(xx, str(ve))
         except BaseException:
             try:
-                await OxyXUB_bot.send_message(event.chat_id, kk)
+                await ultroid_bot.send_message(event.chat_id, kk)
                 return await kk.delete()
             except BaseException:
                 pass

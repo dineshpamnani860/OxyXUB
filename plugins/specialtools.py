@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -40,7 +40,7 @@ from bs4 import BeautifulSoup as b
 from . import *
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="getaudio$",
 )
 async def daudtoid(event):
@@ -55,7 +55,7 @@ async def daudtoid(event):
     await xx.edit("`Done.. Now reply to video In which u want to add that Audio`")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="addaudio$",
 )
 async def adaudroid(event):
@@ -87,7 +87,7 @@ async def adaudroid(event):
     await xx.delete()
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern=r"dob ?(.*)",
 )
 async def hbd(event):
@@ -96,10 +96,10 @@ async def hbd(event):
         return
     if event.reply_to_msg_id:
         kk = await event.get_reply_message()
-        nam = await OxyXUB_bot.get_entity(kk.from_id)
+        nam = await ultroid_bot.get_entity(kk.from_id)
         name = nam.first_name
     else:
-        a = await OxyXUB_bot.get_me()
+        a = await ultroid_bot.get_me()
         name = a.first_name
     zn = pytz.timezone("Asia/Kolkata")
     abhi = dt.now(zn)
@@ -200,7 +200,7 @@ Zodiac -: {sign}
     )
 
 
-@OxyXUB_cmd(pattern="sticker ?(.*)")
+@ultroid_cmd(pattern="sticker ?(.*)")
 async def _(event):
     x = event.pattern_match.group(1)
     if not x:
@@ -222,7 +222,7 @@ async def _(event):
     await uu.edit(a)
 
 
-@OxyXUB_cmd(pattern="wall ?(.*)")
+@ultroid_cmd(pattern="wall ?(.*)")
 async def wall(event):
     inp = event.pattern_match.group(1)
     if not inp:

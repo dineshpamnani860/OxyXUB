@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -54,7 +54,7 @@ from validators.url import url
 from . import *
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="sketch$",
 )
 async def sketch(e):
@@ -88,20 +88,20 @@ async def sketch(e):
     blurred_img = cv2.GaussianBlur(inverted_gray_image, (21, 21), 0)
     inverted_blurred_img = 255 - blurred_img
     pencil_sketch_IMG = cv2.divide(gray_image, inverted_blurred_img, scale=256.0)
-    cv2.imwrite("OxyXUB.png", pencil_sketch_IMG)
-    await e.client.send_file(e.chat_id, file="OxyXUB.png")
+    cv2.imwrite("ultroid.png", pencil_sketch_IMG)
+    await e.client.send_file(e.chat_id, file="ultroid.png")
     await xx.delete()
     os.remove(file)
-    os.remove("OxyXUB.png")
+    os.remove("ultroid.png")
 
 
-@OxyXUB_cmd(pattern="color$")
+@ultroid_cmd(pattern="color$")
 async def _(event):
     reply = await event.get_reply_message()
     if not reply.media:
         return await eor(event, "`Reply To a Black nd White Image`")
     xx = await eor(event, "`Coloring image 🎨🖌️...`")
-    image = await OxyXUB_bot.download_media(reply.media)
+    image = await ultroid_bot.download_media(reply.media)
     img = cv2.VideoCapture(image)
     ret, frame = img.read()
     cv2.imwrite("ult.jpg", frame)
@@ -121,11 +121,11 @@ async def _(event):
             r.json()["status"] + "\nGet api nd set `{i}setredis DEEP_API key`"
         )
     r_json = r.json()["output_url"]
-    await OxyXUB_bot.send_file(event.chat_id, r_json, reply_to=reply)
+    await ultroid_bot.send_file(event.chat_id, r_json, reply_to=reply)
     await xx.delete()
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="grey$",
 )
 async def ultd(event):
@@ -153,8 +153,8 @@ async def ultd(event):
         cv2.imwrite("ult.png", lol)
         file = "ult.png"
     ult = cv2.imread(file)
-    OxyXUB = cv2.cvtColor(ult, cv2.COLOR_BGR2GRAY)
-    cv2.imwrite("ult.jpg", OxyXUB)
+    ultroid = cv2.cvtColor(ult, cv2.COLOR_BGR2GRAY)
+    cv2.imwrite("ult.jpg", ultroid)
     await event.client.send_file(
         event.chat_id,
         "ult.jpg",
@@ -167,7 +167,7 @@ async def ultd(event):
     os.remove(ultt)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="blur$",
 )
 async def ultd(event):
@@ -195,8 +195,8 @@ async def ultd(event):
         cv2.imwrite("ult.png", lol)
         file = "ult.png"
     ult = cv2.imread(file)
-    OxyXUB = cv2.GaussianBlur(ult, (35, 35), 0)
-    cv2.imwrite("ult.jpg", OxyXUB)
+    ultroid = cv2.GaussianBlur(ult, (35, 35), 0)
+    cv2.imwrite("ult.jpg", ultroid)
     await event.client.send_file(
         event.chat_id,
         "ult.jpg",
@@ -209,7 +209,7 @@ async def ultd(event):
     os.remove(ultt)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="negative$",
 )
 async def ultd(event):
@@ -238,8 +238,8 @@ async def ultd(event):
         cv2.imwrite("ult.png", lol)
         file = "ult.png"
     ult = cv2.imread(file)
-    OxyXUB = cv2.bitwise_not(ult)
-    cv2.imwrite("ult.jpg", OxyXUB)
+    ultroid = cv2.bitwise_not(ult)
+    cv2.imwrite("ult.jpg", ultroid)
     await event.client.send_file(
         event.chat_id,
         "ult.jpg",
@@ -252,7 +252,7 @@ async def ultd(event):
     os.remove(ultt)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="mirror$",
 )
 async def ultd(event):
@@ -282,8 +282,8 @@ async def ultd(event):
         file = "ult.png"
     ult = cv2.imread(file)
     ish = cv2.flip(ult, 1)
-    OxyXUB = cv2.hconcat([ult, ish])
-    cv2.imwrite("ult.jpg", OxyXUB)
+    ultroid = cv2.hconcat([ult, ish])
+    cv2.imwrite("ult.jpg", ultroid)
     await event.client.send_file(
         event.chat_id,
         "ult.jpg",
@@ -296,7 +296,7 @@ async def ultd(event):
     os.remove(ultt)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="flip$",
 )
 async def ultd(event):
@@ -327,8 +327,8 @@ async def ultd(event):
     ult = cv2.imread(file)
     trn = cv2.flip(ult, 1)
     ish = cv2.rotate(trn, cv2.ROTATE_180)
-    OxyXUB = cv2.vconcat([ult, ish])
-    cv2.imwrite("ult.jpg", OxyXUB)
+    ultroid = cv2.vconcat([ult, ish])
+    cv2.imwrite("ult.jpg", ultroid)
     await event.client.send_file(
         event.chat_id,
         "ult.jpg",
@@ -341,7 +341,7 @@ async def ultd(event):
     os.remove(ultt)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="quad$",
 )
 async def ultd(event):
@@ -374,8 +374,8 @@ async def ultd(event):
     mici = cv2.hconcat([ult, roid])
     fr = cv2.flip(mici, 1)
     trn = cv2.rotate(fr, cv2.ROTATE_180)
-    OxyXUB = cv2.vconcat([mici, trn])
-    cv2.imwrite("ult.jpg", OxyXUB)
+    ultroid = cv2.vconcat([mici, trn])
+    cv2.imwrite("ult.jpg", ultroid)
     await event.client.send_file(
         event.chat_id,
         "ult.jpg",
@@ -388,7 +388,7 @@ async def ultd(event):
     os.remove(ultt)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="toon$",
 )
 async def ultd(event):
@@ -434,8 +434,8 @@ async def ultd(event):
     )
     centers = np.uint8(centers)
     ish = centers[labels.flatten()]
-    OxyXUB = ish.reshape(ult.shape)
-    cv2.imwrite("ult.jpg", OxyXUB)
+    ultroid = ish.reshape(ult.shape)
+    cv2.imwrite("ult.jpg", ultroid)
     await event.client.send_file(
         event.chat_id,
         "ult.jpg",
@@ -448,7 +448,7 @@ async def ultd(event):
     os.remove(ultt)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="danger$",
 )
 async def ultd(event):
@@ -478,8 +478,8 @@ async def ultd(event):
         file = "ult.png"
     ult = cv2.imread(file)
     dan = cv2.cvtColor(ult, cv2.COLOR_BGR2RGB)
-    OxyXUB = cv2.cvtColor(dan, cv2.COLOR_HSV2BGR)
-    cv2.imwrite("ult.jpg", OxyXUB)
+    ultroid = cv2.cvtColor(dan, cv2.COLOR_HSV2BGR)
+    cv2.imwrite("ult.jpg", ultroid)
     await event.client.send_file(
         event.chat_id,
         "ult.jpg",
@@ -492,7 +492,7 @@ async def ultd(event):
     os.remove(ultt)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="blue$",
 )
 async def ultd(event):

@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -33,7 +33,7 @@
 
 """
 
-from pyOxyXUB.functions.vc_sudos import add_vcsudo, del_vcsudo, get_vcsudos, is_vcsudo
+from pyUltroid.functions.vc_sudos import add_vcsudo, del_vcsudo, get_vcsudos, is_vcsudo
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
 from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
@@ -54,7 +54,7 @@ def user_list(l, n):
         yield l[i : i + n]
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="stopvc$",
     admins_only=True,
     groups_only=True,
@@ -67,7 +67,7 @@ async def _(e):
         await eor(e, f"`{str(ex)}`")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="playvc$",
 )
 async def _(e):
@@ -78,7 +78,7 @@ async def _(e):
     await zz.edit(f"Failed {er}")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="vcinvite$",
     groups_only=True,
 )
@@ -99,7 +99,7 @@ async def _(e):
     await ok.edit(f"`Invited {z} users`")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="startvc$",
     admins_only=True,
     groups_only=True,
@@ -112,7 +112,7 @@ async def _(e):
         await eor(e, f"`{str(ex)}`")
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="listvcaccess$",
 )
 async def _(e):
@@ -129,7 +129,7 @@ async def _(e):
     await xx.edit(pp)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="rmvcaccess ?(.*)",
 )
 async def _(e):
@@ -163,7 +163,7 @@ async def _(e):
         return await eod(xx, f"`{str(ex)}`", time=5)
 
 
-@OxyXUB_cmd(
+@ultroid_cmd(
     pattern="vcaccess ?(.*)",
 )
 async def _(e):

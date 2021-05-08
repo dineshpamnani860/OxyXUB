@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -23,14 +23,14 @@
 """
 import os
 
-from pyOxyXUB.functions.notes_db import *
+from pyUltroid.functions.notes_db import *
 from telegraph import upload_file as uf
 from telethon.utils import pack_bot_file_id
 
 from . import *
 
 
-@OxyXUB_cmd(pattern="addnote ?(.*)")
+@ultroid_cmd(pattern="addnote ?(.*)")
 async def an(e):
     if e.is_group:
         if not e._chat.admin_rights:
@@ -68,7 +68,7 @@ async def an(e):
     await eor(e, f"Done Note : `#{wrd}` saved.")
 
 
-@OxyXUB_cmd(pattern="remnote ?(.*)")
+@ultroid_cmd(pattern="remnote ?(.*)")
 async def rn(e):
     if e.is_group:
         if not e._chat.admin_rights:
@@ -83,7 +83,7 @@ async def rn(e):
     await eor(e, f"Done Note: `#{wrd}` Removed.")
 
 
-@OxyXUB_cmd(pattern="listnote$")
+@ultroid_cmd(pattern="listnote$")
 async def lsnote(e):
     if e.is_group:
         if not e._chat.admin_rights:
@@ -96,7 +96,7 @@ async def lsnote(e):
         await eor(e, "No Notes Found Here")
 
 
-@OxyXUB_bot.on(events.NewMessage())
+@ultroid_bot.on(events.NewMessage())
 async def notes(e):
     xx = e.text
     if not xx.startswith("#"):

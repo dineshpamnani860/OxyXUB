@@ -1,9 +1,9 @@
 #
-# OxyXUB - UserBot
+# Ultroid - UserBot
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup as bs
 from . import *
 
 
-@OxyXUB_cmd(pattern="gadget ?(.*)")
+@ultroid_cmd(pattern="gadget ?(.*)")
 async def mobs(e):
     mat = e.pattern_match.group(1)
     if not mat:
@@ -44,8 +44,8 @@ async def mobs(e):
             ty = fp.findNext()
             out += f"- **{ty.text}** - `{ty.findNext().text}`\n"
         out += "_"
-        await OxyXUB_bot.send_file(e.chat_id, file=imu, caption=out)
-        if e.sender_id == OxyXUB_bot.uid:
+        await ultroid_bot.send_file(e.chat_id, file=imu, caption=out)
+        if e.sender_id == ultroid_bot.uid:
             await bt.delete()
     except Exception as a:
         print(a)

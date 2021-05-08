@@ -1,9 +1,9 @@
 # OxyX - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Copyright (C) 2020 TeamOxy
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
 
 import random
 import re
@@ -13,7 +13,7 @@ from math import ceil
 from platform import python_version as pyver
 
 from git import Repo
-from pyOxyXUB import __version__ as UltVer
+from pyUltroid import __version__ as UltVer
 from support import *
 from telethon import Button, __version__
 from telethon.tl.types import InputWebDocument
@@ -43,7 +43,7 @@ async def e(o):
         ALIVEMSG = get_string("alive_1").format(
             header,
             OWNER_NAME,
-            OxyXUB_version,
+            ultroid_version,
             UltVer,
             uptime,
             pyver(),
@@ -62,7 +62,7 @@ async def e(o):
                     [
                         Button.url(
                             text="Repo",
-                            url="https://github.com/OxyNotOp/OxyXUB",
+                            url="https://github.com/OxyNotOp/OxyX-UB",
                         ),
                     ],
                 ],
@@ -192,12 +192,12 @@ if Var.BOT_USERNAME is not None and asst is not None:
             [
                 Button.switch_inline(
                     "Sᴇᴀʀᴄʜ Oɴ Gᴏᴏɢʟᴇ",
-                    query="go OxyNotOp",
+                    query="go TeamUltroid",
                     same_peer=True,
                 ),
                 Button.switch_inline(
                     "Sᴇᴀʀᴄʜ Oɴ Yᴀʜᴏᴏ",
-                    query="yahoo OxyNotOp",
+                    query="yahoo TeamUltroid",
                     same_peer=True,
                 ),
             ],
@@ -342,7 +342,7 @@ if Var.BOT_USERNAME is not None and asst is not None:
             [
                 Button.url(
                     "⚙️Sᴇᴛᴛɪɴɢs⚙️",
-                    url=f"https://t.me/{bnn}?start={OxyXUB_bot.me.id}",
+                    url=f"https://t.me/{bnn}?start={ultroid_bot.me.id}",
                 ),
             ],
             [Button.inline("••Cʟᴏꜱᴇ••", data="close")],

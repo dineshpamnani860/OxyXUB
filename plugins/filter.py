@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -20,14 +20,14 @@
 
 import os
 
-from pyOxyXUB.functions.filter_db import *
+from pyUltroid.functions.filter_db import *
 from telegraph import upload_file as uf
 from telethon.utils import pack_bot_file_id
 
 from . import *
 
 
-@OxyXUB_cmd(pattern="addfilter ?(.*)")
+@ultroid_cmd(pattern="addfilter ?(.*)")
 async def af(e):
     wrd = (e.pattern_match.group(1)).lower()
     wt = await e.get_reply_message()
@@ -59,7 +59,7 @@ async def af(e):
     await eor(e, f"Done : Filter `{wrd}` Saved.")
 
 
-@OxyXUB_cmd(pattern="remfilter ?(.*)")
+@ultroid_cmd(pattern="remfilter ?(.*)")
 async def rf(e):
     wrd = (e.pattern_match.group(1)).lower()
     chat = e.chat_id
@@ -69,7 +69,7 @@ async def rf(e):
     await eor(e, f"Done : Filter `{wrd}` Removed.")
 
 
-@OxyXUB_cmd(pattern="listfilter$")
+@ultroid_cmd(pattern="listfilter$")
 async def lsnote(e):
     x = list_filter(e.chat_id)
     if x:
@@ -79,7 +79,7 @@ async def lsnote(e):
         await eor(e, "No Filters Found Here")
 
 
-@OxyXUB_bot.on(events.NewMessage())
+@ultroid_bot.on(events.NewMessage())
 async def fl(e):
     xx = (e.text).lower()
     chat = e.chat_id

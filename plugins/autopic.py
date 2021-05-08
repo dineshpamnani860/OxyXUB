@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -24,7 +24,7 @@ from telethon import functions
 from . import *
 
 
-@OxyXUB_cmd(pattern="autopic ?(.*)")
+@ultroid_cmd(pattern="autopic ?(.*)")
 async def autopic(e):
     search = e.pattern_match.group(1)
     if not search:
@@ -45,13 +45,13 @@ async def autopic(e):
         if not ge == "True":
             return
         animepp(page["href"])
-        file = await OxyXUB_bot.upload_file("autopic.jpg")
-        await OxyXUB_bot(functions.photos.UploadProfilePhotoRequest(file))
+        file = await ultroid_bot.upload_file("autopic.jpg")
+        await ultroid_bot(functions.photos.UploadProfilePhotoRequest(file))
         os.remove("autopic.jpg")
         await asyncio.sleep(1100)
 
 
-@OxyXUB_cmd(pattern="stoppic$")
+@ultroid_cmd(pattern="stoppic$")
 async def stoppo(ult):
     gt = udB.get("AUTOPIC")
     if not gt == "True":
