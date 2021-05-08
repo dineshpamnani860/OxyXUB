@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
-# PLease read the GNU Affero General Public License in <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# PLease read the GNU Affero General Public License in <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 clear
 echo -e "\e[1m"
@@ -26,7 +26,7 @@ apt-get update
 apt-get upgrade -y
 pkg upgrade -y
 pkg install python wget -y
-wget https://raw.githubusercontent.com/OxyNotOp/OxyX-UB/main/resources/session/ssgen.py
+wget https://raw.githubusercontent.com/OxyNotOp/OxyXUB/main/resources/session/ssgen.py
 pip install telethon
 clear
 python3 ssgen.py

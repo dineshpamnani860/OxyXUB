@@ -1,10 +1,10 @@
 #!/bin/bash
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 import os
 from time import sleep
@@ -67,11 +67,11 @@ API_HASH = input("Please enter your API HASH: ")
 
 # logging in
 try:
-    with TelegramClient(StringSession(), API_ID, API_HASH) as OxyX-UB:
-        print("Generating a user session for OxyX-UB...")
-        ult = OxyX-UB.send_message(
+    with TelegramClient(StringSession(), API_ID, API_HASH) as OxyXUB:
+        print("Generating a user session for OxyXUB...")
+        ult = OxyXUB.send_message(
             "me",
-            f"**OxyX-UB** `SESSION`:\n\n`{OxyX-UB.session.save()}`\n\n**Do not share this anywhere!**",
+            f"**OxyXUB** `SESSION`:\n\n`{OxyXUB.session.save()}`\n\n**Do not share this anywhere!**",
         )
         print("Your SESSION has been generated. Check your telegram saved messages!")
         exit(0)
