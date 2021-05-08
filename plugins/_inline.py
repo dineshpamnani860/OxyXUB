@@ -1,9 +1,9 @@
-# Ultroid - UserBot
-# Copyright (C) 2020 TeamUltroid
+# OxyX - UserBot
+# Copyright (C) 2020 TeamOxy
 #
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 import random
 import re
@@ -52,23 +52,23 @@ async def e(o):
         )
         res = [
             await b.article(
-                title="Ultroid Userbot",
-                url="https://t.me/TeamUltroid",
+                title="OxyXub Userbot",
+                url="https://t.me/OxyXsupport",
                 description="Userbot | Telethon ",
                 text=ALIVEMSG,
                 thumb=InputWebDocument(ULTROID_PIC, 0, "image/jpeg", []),
                 buttons=[
-                    [Button.url(text="Support Group", url="t.me/UltroidSupport")],
+                    [Button.url(text="Support Group", url="t.me/OxyXSupport")],
                     [
                         Button.url(
                             text="Repo",
-                            url="https://github.com/Teamultroid/Ultroid",
+                            url="https://github.com/OxyNotOp/OxyXUB",
                         ),
                     ],
                 ],
             ),
         ]
-        await o.answer(res, switch_pm=f"👥 ULTROID PORTAL", switch_pm_param="start")
+        await o.answer(res, switch_pm=f"👥 OXY X PORTAL", switch_pm_param="start")
 
 
 if asst.me is not None:
