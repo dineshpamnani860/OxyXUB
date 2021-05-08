@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -31,7 +31,7 @@ from strings import get_string
 from . import *
 
 
-@OxyX-UB_cmd(pattern="google ?(.*)")
+@OxyXUB_cmd(pattern="google ?(.*)")
 async def google(event):
     inp = event.pattern_match.group(1)
     if not inp:
@@ -50,12 +50,12 @@ async def google(event):
     for bkl in range(0, len(omk), 4095):
         opn.append(omk[bkl : bkl + 4095])
     for bc in opn:
-        await OxyX-UB_bot.send_message(event.chat_id, bc, link_preview=False)
+        await OxyXUB_bot.send_message(event.chat_id, bc, link_preview=False)
     await x.delete()
     opn.clear()
 
 
-@OxyX-UB_cmd(pattern="img ?(.*)")
+@OxyXUB_cmd(pattern="img ?(.*)")
 async def goimg(event):
     query = event.pattern_match.group(1)
     if not query:
@@ -82,7 +82,7 @@ async def goimg(event):
     await nn.delete()
 
 
-@OxyX-UB_cmd(pattern="reverse")
+@OxyXUB_cmd(pattern="reverse")
 async def reverse(event):
     reply = await event.get_reply_message()
     if not reply:

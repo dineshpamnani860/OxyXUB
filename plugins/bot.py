@@ -1,9 +1,9 @@
 # OxyX - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available
@@ -12,7 +12,7 @@
     Check if your bot is working.
 
 • `{i}ping`
-    Check OxyX-UB's response time.
+    Check OxyXUB's response time.
 
 • `{i}cmds`
     View all plugin names.
@@ -41,7 +41,7 @@ import heroku3
 import psutil
 import requests
 from git import Repo
-from pyOxyX-UB import __version__ as UltVer
+from pyOxyXUB import __version__ as UltVer
 from search_engine_parser.core.utils import get_rand_user_agent as grua
 from telethon import __version__
 from telethon.errors.rpcerrorlist import ChatSendMediaForbiddenError
@@ -63,7 +63,7 @@ except BaseException:
     HEROKU_APP_NAME = None
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="alive$",
 )
 async def lol(ult):
@@ -77,7 +77,7 @@ async def lol(ult):
     als = (get_string("alive_1")).format(
         header,
         OWNER_NAME,
-        OxyX-UB_version,
+        OxyXUB_version,
         UltVer,
         uptime,
         pyver(),
@@ -94,14 +94,14 @@ async def lol(ult):
             await eor(ult, als)
     else:
         try:
-            await OxyX-UB_bot.send_message(ult.chat_id, file=pic)
-            await OxyX-UB_bot.send_message(ult.chat_id, als)
+            await OxyXUB_bot.send_message(ult.chat_id, file=pic)
+            await OxyXUB_bot.send_message(ult.chat_id, als)
             await ult.delete()
         except ChatSendMediaForbiddenError:
             await eor(ult, als)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="ping$",
 )
 async def _(event):
@@ -113,30 +113,30 @@ async def _(event):
     await x.edit(get_string("ping").format(ms, uptime))
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="cmds$",
 )
 async def cmds(event):
     await allcmds(event)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="restart$",
 )
 async def restartbt(ult):
     if not Var.HEROKU_API:
         await eor(ult, "`Restarting..`")
-        await bash("pkill python3 && python3 -m pyOxyX-UB")
+        await bash("pkill python3 && python3 -m pyOxyXUB")
     else:
         await restart(ult)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="logs$",
 )
 async def _(ult):
     xx = await eor(ult, "`Processing...`")
-    with open("OxyX-UB.log") as f:
+    with open("OxyXUB.log") as f:
         k = f.read()
     key = (
         requests.post("https://nekobin.com/api/documents", json={"content": k})
@@ -145,17 +145,17 @@ async def _(ult):
         .get("key")
     )
     url = f"https://nekobin.com/{key}"
-    await OxyX-UB.send_file(
+    await OxyXUB.send_file(
         ult.chat_id,
-        file="OxyX-UB.log",
+        file="OxyXUB.log",
         thumb="resources/extras/logo_rdm.png",
-        caption=f"**OxyX-UB Logs.**\nPasted [here](https://nekobin.com/{key}) too!",
+        caption=f"**OxyXUB Logs.**\nPasted [here](https://nekobin.com/{key}) too!",
     )
     await xx.edit("Done")
     await xx.delete()
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="usage$",
 )
 async def dyno_usage(dyno):
@@ -225,12 +225,12 @@ async def dyno_usage(dyno):
     )
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="shutdown$",
 )
 async def shht(event):
     await eor(event, get_string("shutdown").format(OWNER_NAME))
-    await OxyX-UB_bot.disconnect()
+    await OxyXUB_bot.disconnect()
 
 
 HELP.update({f"{__name__.split('.')[1]}": f"{__doc__.format(i=HNDLR)}"})

@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available
@@ -20,7 +20,7 @@ import zipfile
 from . import *
 
 
-@OxyX-UB_cmd(pattern="unzip$")
+@OxyXUB_cmd(pattern="unzip$")
 async def _(ult):
     if not ult.is_reply:
         return await eor(ult, "`Reply to a Zipfile..`")
@@ -34,7 +34,7 @@ async def _(ult):
         return await msg.edit("`Reply to a Zipfile...`")
     k = time.time()
     d = "resources/downloads/"
-    dnl = await OxyX-UB_bot.download_media(
+    dnl = await OxyXUB_bot.download_media(
         gt,
         d,
         progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
@@ -53,7 +53,7 @@ async def _(ult):
         if os.path.exists(single_file):
             caption_rts = os.path.basename(single_file)
             try:
-                await OxyX-UB_bot.send_file(
+                await OxyXUB_bot.send_file(
                     ult.chat_id,
                     single_file,
                     thumb=THUMB,
@@ -69,11 +69,11 @@ async def _(ult):
     await msg.edit(f"**Unzipped `{len(filename)-Enum}/{len(filename)}` Files**")
     if Enum > 0:
         if len(Elist) < 4096:
-            await OxyX-UB_bot.send_message(Var.LOG_CHANNEL, Elist)
+            await OxyXUB_bot.send_message(Var.LOG_CHANNEL, Elist)
         else:
             file = open("UnzipError.txt", "w").write(Elist)
             file.close()
-            await OxyX-UB_bot.send_message(
+            await OxyXUB_bot.send_message(
                 Var.LOG_CHANNEL,
                 "UnzipError.txt",
                 caption=f"`Error Occured on Unzip cmd",

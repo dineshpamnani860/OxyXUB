@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 
 from telethon.errors import ChatSendInlineForbiddenError
@@ -12,17 +12,17 @@ from . import *
 
 REPOMSG = (
     "• **OXYX USERBOT** •\n\n",
-    "• Repo - [Click Here](https://github.com/OxyNotOp/OxyX-UB)\n",
+    "• Repo - [Click Here](https://github.com/OxyNotOp/OxyXUB)\n",
     "• Support - @OxyXsupport",
 )
 
 
-@OxyX-UB_cmd(pattern="repo$")
+@OxyXUB_cmd(pattern="repo$")
 async def repify(e):
     try:
-        q = await OxyX-UB_bot.inline_query(Var.BOT_USERNAME, "repo")
+        q = await OxyXUB_bot.inline_query(Var.BOT_USERNAME, "repo")
         await q[0].click(e.chat_id)
-        if e.sender_id == OxyX-UB_bot.uid:
+        if e.sender_id == OxyXUB_bot.uid:
             await e.delete()
     except ChatSendInlineForbiddenError:
         await eor(e, REPOMSG)

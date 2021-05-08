@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -39,7 +39,7 @@ from . import *
 Note = "\n\nNote: `{mention}`, `{group}`, `{count}`, `{name}`, `{fullname}`, `{username}`, `{userid}` can be used as formatting parameters.\n\n"
 
 
-@OxyX-UB_cmd(pattern="setwelcome")
+@OxyXUB_cmd(pattern="setwelcome")
 async def setwel(event):
     x = await eor(event, get_string("com_1"))
     r = await event.get_reply_message()
@@ -74,7 +74,7 @@ async def setwel(event):
         await eod(x, "`Reply to message which u want to set as welcome`")
 
 
-@OxyX-UB_cmd(pattern="clearwelcome$")
+@OxyXUB_cmd(pattern="clearwelcome$")
 async def clearwel(event):
     if not get_welcome(event.chat_id):
         await eod(event, "`No welcome was set!`", time=5)
@@ -82,7 +82,7 @@ async def clearwel(event):
     await eod(event, "`Welcome Note Deleted`")
 
 
-@OxyX-UB_cmd(pattern="getwelcome$")
+@OxyXUB_cmd(pattern="getwelcome$")
 async def listwel(event):
     wel = get_welcome(event.chat_id)
     if not wel:
@@ -93,7 +93,7 @@ async def listwel(event):
     await event.delete()
 
 
-@OxyX-UB_bot.on(events.ChatAction())
+@OxyXUB_bot.on(events.ChatAction())
 async def _(event):
     wel = get_welcome(event.chat_id)
     if wel:
@@ -135,7 +135,7 @@ async def _(event):
                 await event.reply(file=med)
 
 
-@OxyX-UB_cmd(pattern="setgoodbye")
+@OxyXUB_cmd(pattern="setgoodbye")
 async def setgb(event):
     x = await eor(event, get_string("com_1"))
     r = await event.get_reply_message()
@@ -170,7 +170,7 @@ async def setgb(event):
         await eod(x, "`Reply to message which u want to set as goodbye`")
 
 
-@OxyX-UB_cmd(pattern="cleargoodbye$")
+@OxyXUB_cmd(pattern="cleargoodbye$")
 async def clearwgb(event):
     if not get_goodbye(event.chat_id):
         await eod(event, "`No goodbye was set!`", time=5)
@@ -178,7 +178,7 @@ async def clearwgb(event):
     await eod(event, "`Goodbye Note Deleted`")
 
 
-@OxyX-UB_cmd(pattern="getgoodbye$")
+@OxyXUB_cmd(pattern="getgoodbye$")
 async def listgd(event):
     wel = get_goodbye(event.chat_id)
     if not wel:
@@ -189,7 +189,7 @@ async def listgd(event):
     await event.delete()
 
 
-@OxyX-UB_bot.on(events.ChatAction())
+@OxyXUB_bot.on(events.ChatAction())
 async def _(event):
     wel = get_goodbye(event.chat_id)
     if wel:

@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -18,16 +18,16 @@ from . import *
 
 
 
-@OxyX-UB_cmd(pattern="mediainfo$")
+@OxyXUB_cmd(pattern="mediainfo$")
 async def mi(e):
     r = await e.get_reply_message()
     if not (r and r.media):
         return await eod(e, "`Reply to any media`")
     xx = mediainfo(r.media)
     murl = r.media.stringify()
-    url = make_html_telegraph("Mediainfo", "OxyX-UB", f"<code>{murl}</code>")
+    url = make_html_telegraph("Mediainfo", "OxyXUB", f"<code>{murl}</code>")
     ee = await eor(e, f"**[{xx}]({url})**\n\n`Loading More...`", link_preview=False)
-    dl = await OxyX-UB_bot.download_media(r.media)
+    dl = await OxyXUB_bot.download_media(r.media)
     out, er = await bash(f"mediainfo {dl}")
     os.remove(dl)
     if er:

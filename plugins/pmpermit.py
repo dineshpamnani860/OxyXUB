@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -27,8 +27,8 @@
     Start logging again from that user.
 """
 
-from pyOxyX-UB.functions.logusers_db import *
-from pyOxyX-UB.functions.pmpermit_db import *
+from pyOxyXUB.functions.logusers_db import *
+from pyOxyXUB.functions.pmpermit_db import *
 from telethon import events
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
@@ -89,7 +89,7 @@ PMCMDS = [
 # =================================================================
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="logpm$",
 )
 async def _(e):
@@ -102,7 +102,7 @@ async def _(e):
         return await eod(e, "`Wasn logging msgs from here.`", time=3)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="nologpm$",
 )
 async def _(e):
@@ -115,7 +115,7 @@ async def _(e):
         return await eod(e, "`Wasn't logging msgs from here.`", time=3)
 
 
-@OxyX-UB_bot.on(
+@OxyXUB_bot.on(
     events.NewMessage(
         incoming=True,
         func=lambda e: e.is_private,
@@ -139,7 +139,7 @@ if sett is None:
     sett = True
 if sett == "True" and sett != "False":
 
-    @OxyX-UB_bot.on(
+    @OxyXUB_bot.on(
         events.NewMessage(
             outgoing=True,
             func=lambda e: e.is_private,
@@ -168,7 +168,7 @@ if sett == "True" and sett != "False":
                     f"#AutoApproved\nßecoz of outgoing msg\nUser - [{name0}](tg://user?id={e.chat_id})",
                 )
 
-    @OxyX-UB_bot.on(
+    @OxyXUB_bot.on(
         events.NewMessage(
             incoming=True,
             func=lambda e: e.is_private,
@@ -294,7 +294,7 @@ if sett == "True" and sett != "False":
                         f"[{name0}](tg://user?id={user.id}) was Blocked for spamming.",
                     )
 
-    @OxyX-UB_cmd(
+    @OxyXUB_cmd(
         pattern="(a|approve)(?: |$)",
     )
     async def approvepm(apprvpm):
@@ -355,7 +355,7 @@ if sett == "True" and sett != "False":
         else:
             await apprvpm.edit(NO_REPLY)
 
-    @OxyX-UB_cmd(
+    @OxyXUB_cmd(
         pattern="(da|disapprove)(?: |$)",
     )
     async def disapprovepm(e):
@@ -408,7 +408,7 @@ if sett == "True" and sett != "False":
         else:
             await e.edit(NO_REPLY)
 
-    @OxyX-UB_cmd(
+    @OxyXUB_cmd(
         pattern="block$",
     )
     async def blockpm(block):
@@ -449,7 +449,7 @@ if sett == "True" and sett != "False":
                 f"#BLOCKED\nUser: [{name0}](tg://user?id={uid})",
             )
 
-    @OxyX-UB_cmd(
+    @OxyXUB_cmd(
         pattern="unblock$",
     )
     async def unblockpm(unblock):

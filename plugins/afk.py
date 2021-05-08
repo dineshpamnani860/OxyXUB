@@ -1,9 +1,9 @@
 # OxyX - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -18,7 +18,7 @@
 import asyncio
 from datetime import datetime
 
-from pyOxyX-UB.functions.pmpermit_db import *
+from pyOxyXUB.functions.pmpermit_db import *
 from telethon import events
 from telethon.tl.functions.account import GetPrivacyRequest
 from telethon.tl.types import InputPrivacyKeyStatusTimestamp, PrivacyValueAllowAll
@@ -41,8 +41,8 @@ afk_start = {}
 LOG = Var.LOG_CHANNEL
 
 
-@OxyX-UB_bot.on(events.NewMessage(outgoing=True))
-@OxyX-UB_bot.on(events.MessageEdited(outgoing=True))
+@OxyXUB_bot.on(events.NewMessage(outgoing=True))
+@OxyXUB_bot.on(events.MessageEdited(outgoing=True))
 async def set_not_afk(event):
     if event.is_private:
         if Redis("PMSETTING") == "True":
@@ -61,38 +61,38 @@ async def set_not_afk(event):
     if "afk" not in current_message and "yes" in USER_AFK:
         try:
             if pic.endswith((".tgs", ".webp")):
-                shite = await OxyX-UB_bot.send_message(event.chat_id, file=pic)
-                shites = await OxyX-UB_bot.send_message(
+                shite = await OxyXUB_bot.send_message(event.chat_id, file=pic)
+                shites = await OxyXUB_bot.send_message(
                     event.chat_id,
                     get_string("afk_1").format(total_afk_time),
                 )
             else:
-                shite = await OxyX-UB_bot.send_message(
+                shite = await OxyXUB_bot.send_message(
                     event.chat_id,
                     get_string("afk_1").format(total_afk_time),
                     file=pic,
                 )
         except BaseException:
-            shite = await OxyX-UB_bot.send_message(
+            shite = await OxyXUB_bot.send_message(
                 event.chat_id,
                 get_string("afk_1").format(total_afk_time),
             )
         try:
             try:
                 if pic.endswith((".tgs", ".webp")):
-                    await OxyX-UB_bot.send_message(LOG, file=pic)
-                    await OxyX-UB_bot.send_message(
+                    await OxyXUB_bot.send_message(LOG, file=pic)
+                    await OxyXUB_bot.send_message(
                         LOG,
                         get_string("afk_2").format(total_afk_time),
                     )
                 else:
-                    await OxyX-UB_bot.send_message(
+                    await OxyXUB_bot.send_message(
                         LOG,
                         get_string("afk_2").format(total_afk_time),
                         file=pic,
                     )
             except BaseException:
-                await OxyX-UB_bot.send_message(
+                await OxyXUB_bot.send_message(
                     LOG,
                     get_string("afk_2").format(total_afk_time),
                 )
@@ -108,7 +108,7 @@ async def set_not_afk(event):
         afk_time = None
 
 
-@OxyX-UB_bot.on(
+@OxyXUB_bot.on(
     events.NewMessage(incoming=True, func=lambda e: bool(e.mentioned or e.is_private)),
 )
 async def on_afk(event):
@@ -159,7 +159,7 @@ async def on_afk(event):
             pass
 
 
-@OxyX-UB_cmd(pattern=r"afk ?(.*)")
+@OxyXUB_cmd(pattern=r"afk ?(.*)")
 async def _(event):
     reply = await event.get_reply_message()
     global USER_AFK
@@ -183,7 +183,7 @@ async def _(event):
     else:
         pic = None
     if not USER_AFK:
-        last_seen_status = await OxyX-UB_bot(
+        last_seen_status = await OxyXUB_bot(
             GetPrivacyRequest(InputPrivacyKeyStatusTimestamp()),
         )
         if isinstance(last_seen_status.rules, PrivacyValueAllowAll):
@@ -192,60 +192,60 @@ async def _(event):
         if reason:
             try:
                 if pic.endswith((".tgs", ".webp")):
-                    await OxyX-UB_bot.send_message(event.chat_id, file=pic)
-                    await OxyX-UB_bot.send_message(
+                    await OxyXUB_bot.send_message(event.chat_id, file=pic)
+                    await OxyXUB_bot.send_message(
                         event.chat_id,
                         get_string("afk_5").format(reason),
                     )
                 else:
-                    await OxyX-UB_bot.send_message(
+                    await OxyXUB_bot.send_message(
                         event.chat_id,
                         get_string("afk_5").format(reason),
                         file=pic,
                     )
             except BaseException:
-                await OxyX-UB_bot.send_message(
+                await OxyXUB_bot.send_message(
                     event.chat_id,
                     get_string("afk_5").format(reason),
                 )
         else:
             try:
                 if pic.endswith((".tgs", ".webp")):
-                    await OxyX-UB_bot.send_message(event.chat_id, file=pic)
-                    await OxyX-UB_bot.send_message(event.chat_id, get_string("afk_6"))
+                    await OxyXUB_bot.send_message(event.chat_id, file=pic)
+                    await OxyXUB_bot.send_message(event.chat_id, get_string("afk_6"))
                 else:
-                    await OxyX-UB_bot.send_message(
+                    await OxyXUB_bot.send_message(
                         event.chat_id,
                         get_string("afk_6"),
                         file=pic,
                     )
             except BaseException:
-                await OxyX-UB_bot.send_message(event.chat_id, get_string("afk_6"))
+                await OxyXUB_bot.send_message(event.chat_id, get_string("afk_6"))
         await event.delete()
         try:
             if reason and pic:
                 if pic.endswith((".tgs", ".webp")):
-                    await OxyX-UB_bot.send_message(LOG, file=pic)
-                    await OxyX-UB_bot.send_message(
+                    await OxyXUB_bot.send_message(LOG, file=pic)
+                    await OxyXUB_bot.send_message(
                         LOG,
                         get_string("afk_7").format(reason),
                     )
                 else:
-                    await OxyX-UB_bot.send_message(
+                    await OxyXUB_bot.send_message(
                         LOG,
                         get_string("afk_7").format(reason),
                         file=pic,
                     )
             elif reason:
-                await OxyX-UB_bot.send_message(LOG, get_string("afk_7").format(reason))
+                await OxyXUB_bot.send_message(LOG, get_string("afk_7").format(reason))
             elif pic:
                 if pic.endswith((".tgs", ".webp")):
-                    await OxyX-UB_bot.send_message(LOG, file=pic)
-                    await OxyX-UB_bot.send_message(LOG, get_string("afk_8"))
+                    await OxyXUB_bot.send_message(LOG, file=pic)
+                    await OxyXUB_bot.send_message(LOG, get_string("afk_8"))
                 else:
-                    await OxyX-UB_bot.send_message(LOG, get_string("afk_8"), file=pic)
+                    await OxyXUB_bot.send_message(LOG, get_string("afk_8"), file=pic)
             else:
-                await OxyX-UB_bot.send_message(LOG, get_string("afk_8"))
+                await OxyXUB_bot.send_message(LOG, get_string("afk_8"))
         except BaseException:
             pass
 

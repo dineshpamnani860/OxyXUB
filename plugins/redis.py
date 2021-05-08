@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -17,7 +17,7 @@
     Redis Set Value.
     e.g :
     `{i}setredis hi there`
-    `{i}setredis hi there | OxyX-UB here`
+    `{i}setredis hi there | OxyXUB here`
 
 • `{i}getredis key`
     Redis Get Value
@@ -37,7 +37,7 @@ import re
 from . import *
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="setredis ?(.*)",
 )
 async def _(ult):
@@ -57,7 +57,7 @@ async def _(ult):
         await ok.edit("`Something Went Wrong`")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="getredis ?(.*)",
 )
 async def _(ult):
@@ -72,7 +72,7 @@ async def _(ult):
         await ok.edit("`Something Went Wrong`")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="delredis ?(.*)",
 )
 async def _(ult):
@@ -85,7 +85,7 @@ async def _(ult):
         await ok.edit("`Something Went Wrong`")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="renredis ?(.*)",
 )
 async def _(ult):
@@ -107,7 +107,7 @@ async def _(ult):
         await ok.edit("Key not found")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="getkeys$",
 )
 async def _(ult):
@@ -122,7 +122,7 @@ async def _(ult):
     await ok.edit(f"**List of Redis Keys :**\n{msg}")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="redisusage$",
 )
 async def _(ult):

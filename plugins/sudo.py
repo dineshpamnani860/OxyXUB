@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -20,13 +20,13 @@
 
 import re
 
-from pyOxyX-UB.misc._decorators import sed
+from pyOxyXUB.misc._decorators import sed
 from telethon.tl.functions.users import GetFullUserRequest
 
 from . import *
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="addsudo ?(.*)",
 )
 async def _(ult):
@@ -37,7 +37,7 @@ async def _(ult):
         except BaseException:
             pass
     else:
-        if ult.sender_id != OxyX-UB_bot.uid:
+        if ult.sender_id != OxyXUB_bot.uid:
             return await eod(ult, "`Sudo users can't add new sudos!`", time=10)
     ok = await eor(ult, "`Updating SUDO Users List ...`")
     if ult.reply_to_msg_id:
@@ -45,7 +45,7 @@ async def _(ult):
         id = replied_to.sender.id
         user = await ult.client(GetFullUserRequest(int(id)))
         sed.append(id)
-        if id == OxyX-UB_bot.me.id:
+        if id == OxyXUB_bot.me.id:
             return await ok.edit("You cant add yourself as Sudo User...")
         elif is_sudo(id):
             return await ok.edit(
@@ -108,7 +108,7 @@ async def _(ult):
         return await ok.edit(f"**Failed to add `{id}` as SUDO User ... **")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="delsudo ?(.*)",
 )
 async def _(ult):
@@ -122,7 +122,7 @@ async def _(ult):
         except BaseException:
             pass
     else:
-        if ult.sender_id != OxyX-UB_bot.uid:
+        if ult.sender_id != OxyXUB_bot.uid:
             return await eor(ult, "You are sudo user, You cant add other sudo user.")
     ok = await eor(ult, "`Updating SUDO Users List ...`")
     if ult.reply_to_msg_id:
@@ -191,7 +191,7 @@ async def _(ult):
         return await ok.edit(f"**Failed to Remove `{id}` as SUDO User ... **")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="listsudo$",
 )
 async def _(ult):
@@ -212,7 +212,7 @@ async def _(ult):
             msg += f"• `{i}` -> Invalid User\n"
     m = udB.get("SUDO") if udB.get("SUDO") else "False"
     if m == "False":
-        m = "[False](https://telegra.ph/OxyX-UB-04-06)"
+        m = "[False](https://telegra.ph/OxyXUB-04-06)"
     return await ok.edit(
         f"**SUDO MODE : {m}\n\nList of SUDO Users :**\n{msg}", link_preview=False
     )

@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -23,14 +23,14 @@
 """
 import os
 
-from pyOxyX-UB.functions.notes_db import *
+from pyOxyXUB.functions.notes_db import *
 from telegraph import upload_file as uf
 from telethon.utils import pack_bot_file_id
 
 from . import *
 
 
-@OxyX-UB_cmd(pattern="addnote ?(.*)")
+@OxyXUB_cmd(pattern="addnote ?(.*)")
 async def an(e):
     if e.is_group:
         if not e._chat.admin_rights:
@@ -68,7 +68,7 @@ async def an(e):
     await eor(e, f"Done Note : `#{wrd}` saved.")
 
 
-@OxyX-UB_cmd(pattern="remnote ?(.*)")
+@OxyXUB_cmd(pattern="remnote ?(.*)")
 async def rn(e):
     if e.is_group:
         if not e._chat.admin_rights:
@@ -83,7 +83,7 @@ async def rn(e):
     await eor(e, f"Done Note: `#{wrd}` Removed.")
 
 
-@OxyX-UB_cmd(pattern="listnote$")
+@OxyXUB_cmd(pattern="listnote$")
 async def lsnote(e):
     if e.is_group:
         if not e._chat.admin_rights:
@@ -96,7 +96,7 @@ async def lsnote(e):
         await eor(e, "No Notes Found Here")
 
 
-@OxyX-UB_bot.on(events.NewMessage())
+@OxyXUB_bot.on(events.NewMessage())
 async def notes(e):
     xx = e.text
     if not xx.startswith("#"):

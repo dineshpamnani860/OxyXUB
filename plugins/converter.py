@@ -1,9 +1,9 @@
 # OxyX - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -38,7 +38,7 @@ from . import *
 opn = []
 
 
-@OxyX-UB_cmd(pattern="rename ?(.*)")
+@OxyXUB_cmd(pattern="rename ?(.*)")
 async def imak(event):
     reply = await event.get_reply_message()
     if not reply:
@@ -49,21 +49,21 @@ async def imak(event):
         await eor(event, "Give The name nd extension of file")
         return
     xx = await eor(event, "`Processing...`")
-    image = await OxyX-UB_bot.download_media(reply)
+    image = await OxyXUB_bot.download_media(reply)
     os.rename(image, inp)
-    await OxyX-UB_bot.send_file(event.chat_id, inp, force_document=True, reply_to=reply)
+    await OxyXUB_bot.send_file(event.chat_id, inp, force_document=True, reply_to=reply)
     os.remove(inp)
     await xx.delete()
 
 
-@OxyX-UB_cmd(pattern="mtoi$")
+@OxyXUB_cmd(pattern="mtoi$")
 async def imak(event):
     reply = await event.get_reply_message()
     if not (reply and (reply.media)):
         await eor(event, "Reply to any media.")
         return
     xx = await eor(event, "`Processing...`")
-    image = await OxyX-UB_bot.download_media(reply)
+    image = await OxyXUB_bot.download_media(reply)
     file = "ult.png"
     if image.endswith((".webp", ".png")):
         c = Image.open(image)
@@ -72,20 +72,20 @@ async def imak(event):
         img = cv2.VideoCapture(image)
         ult, roid = img.read()
         cv2.imwrite(file, roid)
-    await OxyX-UB_bot.send_file(event.chat_id, file, reply_to=reply)
+    await OxyXUB_bot.send_file(event.chat_id, file, reply_to=reply)
     await xx.delete()
     os.remove(file)
     os.remove(image)
 
 
-@OxyX-UB_cmd(pattern="mtos$")
+@OxyXUB_cmd(pattern="mtos$")
 async def smak(event):
     reply = await event.get_reply_message()
     if not (reply and (reply.media)):
         await eor(event, "Reply to any media.")
         return
     xx = await eor(event, "`Processing...`")
-    image = await OxyX-UB_bot.download_media(reply)
+    image = await OxyXUB_bot.download_media(reply)
     file = "ult.webp"
     if image.endswith((".webp", ".png", ".jpg")):
         c = Image.open(image)
@@ -94,13 +94,13 @@ async def smak(event):
         img = cv2.VideoCapture(image)
         ult, roid = img.read()
         cv2.imwrite(file, roid)
-    await OxyX-UB_bot.send_file(event.chat_id, file, reply_to=reply)
+    await OxyXUB_bot.send_file(event.chat_id, file, reply_to=reply)
     await xx.delete()
     os.remove(file)
     os.remove(image)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="doc",
 )
 async def _(event):
@@ -123,7 +123,7 @@ async def _(event):
             os.remove(input_str)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="open$",
 )
 async def _(event):

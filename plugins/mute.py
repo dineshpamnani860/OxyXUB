@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -28,20 +28,20 @@
 """
 
 
-from pyOxyX-UB.functions.all import ban_time
-from pyOxyX-UB.functions.mute_db import is_muted, mute, unmute
+from pyOxyXUB.functions.all import ban_time
+from pyOxyXUB.functions.mute_db import is_muted, mute, unmute
 from telethon import events
 
 from . import *
 
 
-@OxyX-UB_bot.on(events.NewMessage(incoming=True))
+@OxyXUB_bot.on(events.NewMessage(incoming=True))
 async def watcher(event):
     if is_muted(f"{event.sender_id}_{event.chat_id}"):
         await event.delete()
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="dmute ?(.*)",
 )
 async def startmute(event):
@@ -86,7 +86,7 @@ async def startmute(event):
         await eod(xx, "Error: " + f"`{str(e)}`")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="undmute ?(.*)",
 )
 async def endmute(event):
@@ -119,7 +119,7 @@ async def endmute(event):
         await eod(xx, "Error: " + f"`{str(e)}`")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="tmute",
     groups_only=True,
 )
@@ -150,7 +150,7 @@ async def _(e):
             name = (await event.client.get_entity(userid)).first_name
     else:
         return await eod(xx, "`Reply to someone or use its id...`", time=3)
-    if userid == OxyX-UB_bot.uid:
+    if userid == OxyXUB_bot.uid:
         return await eod(xx, "`I can't mute myself.`", time=3)
     try:
         bun = await ban_time(xx, tme)
@@ -169,7 +169,7 @@ async def _(e):
         await eod(xx, f"`{str(m)}`")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="unmute ?(.*)",
     groups_only=True,
 )
@@ -208,7 +208,7 @@ async def _(e):
         await eod(xx, f"`{str(m)}`")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="mute ?(.*)",
     groups_only=True,
 )
@@ -231,7 +231,7 @@ async def _(e):
             name = (await e.client.get_entity(userid)).first_name
     else:
         return await eod(xx, "`Reply to someone or use its id...`", time=3)
-    if userid == OxyX-UB_bot.uid:
+    if userid == OxyXUB_bot.uid:
         return await eod(xx, "`I can't mute myself.`", time=3)
     try:
         await e.client.edit_permissions(

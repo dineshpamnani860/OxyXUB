@@ -1,23 +1,23 @@
 # OxyX - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 import time
 
-from pyOxyX-UB import *
-from pyOxyX-UB.dB import *
-from pyOxyX-UB.dB.core import *
-from pyOxyX-UB.functions.all import *
-from pyOxyX-UB.functions.broadcast_db import *
-from pyOxyX-UB.functions.gban_mute_db import *
-from pyOxyX-UB.functions.goodbye_db import *
-from pyOxyX-UB.functions.google_image import googleimagesdownload
-from pyOxyX-UB.functions.sudos import *
-from pyOxyX-UB.functions.welcome_db import *
-from pyOxyX-UB.utils import *
+from pyOxyXUB import *
+from pyOxyXUB.dB import *
+from pyOxyXUB.dB.core import *
+from pyOxyXUB.functions.all import *
+from pyOxyXUB.functions.broadcast_db import *
+from pyOxyXUB.functions.gban_mute_db import *
+from pyOxyXUB.functions.goodbye_db import *
+from pyOxyXUB.functions.google_image import googleimagesdownload
+from pyOxyXUB.functions.sudos import *
+from pyOxyXUB.functions.welcome_db import *
+from pyOxyXUB.utils import *
 
 from strings import get_string
 
@@ -29,9 +29,9 @@ except ModuleNotFoundError:
     )
 
 start_time = time.time()
-OxyX-UB_version = "v0.0.5"
-OWNER_NAME = OxyX-UB_bot.me.first_name
-OWNER_ID = OxyX-UB_bot.me.id
+OxyXUB_version = "v0.0.5"
+OWNER_NAME = OxyXUB_bot.me.first_name
+OWNER_ID = OxyXUB_bot.me.id
 
 
 def grt(seconds: int) -> str:

@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -18,7 +18,7 @@ import requests
 from . import *
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="github (.*)",
 )
 async def gitsearch(event):
@@ -59,7 +59,7 @@ async def gitsearch(event):
 **Following** - {ufollowing}
 """
     await xx.delete()
-    await OxyX-UB_bot.send_file(
+    await OxyXUB_bot.send_file(
         event.chat_id,
         upic,
         caption=fullusr,

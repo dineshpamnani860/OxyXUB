@@ -1,9 +1,9 @@
 # OxyX - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -38,14 +38,14 @@ TMP_DOWNLOAD_DIRECTORY = "resources/downloads/"
 # bio changer
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="setbio ?(.*)",
 )
 async def _(ult):
     ok = await eor(ult, "...")
     set = ult.pattern_match.group(1)
     try:
-        await OxyX-UB_bot(functions.account.UpdateProfileRequest(about=set))
+        await OxyXUB_bot(functions.account.UpdateProfileRequest(about=set))
         await ok.edit(f"Profile bio changed to\n`{set}`")
     except Exception as ex:
         await ok.edit("Error occured.\n`{}`".format(str(ex)))
@@ -56,7 +56,7 @@ async def _(ult):
 # name changer
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="setname ?((.|//)*)",
 )
 async def _(ult):
@@ -67,7 +67,7 @@ async def _(ult):
     if "//" in names:
         first_name, last_name = names.split("//", 1)
     try:
-        await OxyX-UB_bot(
+        await OxyXUB_bot(
             functions.account.UpdateProfileRequest(
                 first_name=first_name,
                 last_name=last_name,
@@ -83,7 +83,7 @@ async def _(ult):
 # profile pic
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="setpic$",
 )
 async def _(ult):
@@ -94,15 +94,15 @@ async def _(ult):
         os.makedirs(TMP_DOWNLOAD_DIRECTORY)
     photo = None
     try:
-        photo = await OxyX-UB_bot.download_media(reply_message, TMP_DOWNLOAD_DIRECTORY)
+        photo = await OxyXUB_bot.download_media(reply_message, TMP_DOWNLOAD_DIRECTORY)
     except Exception as ex:
         await ok.edit("Error occured.\n`{}`".format(str(ex)))
     else:
         if photo:
             await ok.edit("`Uploading it to my profile...`")
-            file = await OxyX-UB_bot.upload_file(photo)
+            file = await OxyXUB_bot.upload_file(photo)
             try:
-                await OxyX-UB_bot(functions.photos.UploadProfilePhotoRequest(file))
+                await OxyXUB_bot(functions.photos.UploadProfilePhotoRequest(file))
             except Exception as ex:
                 await ok.edit("Error occured.\n`{}`".format(str(ex)))
             else:
@@ -118,7 +118,7 @@ async def _(ult):
 # delete profile pic(s)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="delpfp ?(.*)",
 )
 async def remove_profilepic(delpfp):
@@ -130,7 +130,7 @@ async def remove_profilepic(delpfp):
         lim = int(group)
     else:
         lim = 1
-    pfplist = await OxyX-UB_bot(
+    pfplist = await OxyXUB_bot(
         GetUserPhotosRequest(user_id=delpfp.from_id, offset=0, max_id=0, limit=lim),
     )
     input_photos = []
@@ -142,13 +142,13 @@ async def remove_profilepic(delpfp):
                 file_reference=sep.file_reference,
             ),
         )
-    await OxyX-UB_bot(DeletePhotosRequest(id=input_photos))
+    await OxyXUB_bot(DeletePhotosRequest(id=input_photos))
     await ok.edit(f"`Successfully deleted {len(input_photos)} profile picture(s).`")
     await asyncio.sleep(10)
     await ok.delete()
 
 
-@OxyX-UB_cmd(pattern="poto ?(.*)")
+@OxyXUB_cmd(pattern="poto ?(.*)")
 async def gpoto(e):
     ult = e.pattern_match.group(1)
     a = await eor(e, "`Processing...`")
@@ -156,13 +156,13 @@ async def gpoto(e):
         gs = await e.get_reply_message()
         ult = gs.sender_id
     try:
-        okla = await OxyX-UB_bot.download_profile_photo(
+        okla = await OxyXUB_bot.download_profile_photo(
             ult,
             "profile.jpg",
             download_big=True,
         )
         await a.delete()
-        await OxyX-UB_bot.send_message(e.chat_id, file=okla)
+        await OxyXUB_bot.send_message(e.chat_id, file=okla)
         os.remove(okla)
     except Exception as er:
         await eor(e, f"ERROR - {str(er)}")

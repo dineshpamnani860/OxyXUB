@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 
 """
@@ -38,7 +38,7 @@ from . import *
 TOKEN_FILE = "resources/auths/auth_token.txt"
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="listdrive$",
 )
 async def files(event):
@@ -48,7 +48,7 @@ async def files(event):
     await eor(event, list_files(http))
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="ugdrive ?(.*)",
 )
 async def _(event):
@@ -115,7 +115,7 @@ async def _(event):
         return await eod(mone, "`File Not found in local server.`", time=10)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="drivesearch ?(.*)",
 )
 async def sch(event):
@@ -138,7 +138,7 @@ async def sch(event):
         return await a.edit(str(ex))
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="udir ?(.*)",
 )
 async def _(event):
@@ -160,7 +160,7 @@ async def _(event):
         return await eod(event, f"Directory {input_str} does not seem to exist", time=5)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="gfolder$",
 )
 async def _(event):

@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available
@@ -22,7 +22,7 @@ from . import *
 tr = Translator()
 
 
-@OxyX-UB_cmd(pattern="autocorrect")
+@OxyXUB_cmd(pattern="autocorrect")
 async def acc(e):
     if Redis("AUTOCORRECT") != "True":
         udB.set("AUTOCORRECT", "True")
@@ -32,7 +32,7 @@ async def acc(e):
         await eor(e, "AUTOCORRECT Feature Off")
 
 
-@OxyX-UB_bot.on(events.NewMessage(outgoing=True))
+@OxyXUB_bot.on(events.NewMessage(outgoing=True))
 async def gramme(event):
     if Redis("AUTOCORRECT") != "True":
         return

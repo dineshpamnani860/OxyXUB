@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -80,22 +80,22 @@ TMP_DOWNLOAD_DIRECTORY = "resources/downloads/"
 
 # Telegraph Things
 telegraph = Telegraph()
-telegraph.create_account(short_name="OxyX-UB")
+telegraph.create_account(short_name="OxyXUB")
 # ================================================================#
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="kickme$",
     groups_only=True,
 )
 async def leave(ult):
-    if ult.sender_id != OxyX-UB_bot.uid:
+    if ult.sender_id != OxyXUB_bot.uid:
         return
-    await eor(ult, f"`{OxyX-UB_bot.me.first_name} has left this group, bye!!.`")
-    await OxyX-UB_bot(LeaveChannelRequest(ult.chat_id))
+    await eor(ult, f"`{OxyXUB_bot.me.first_name} has left this group, bye!!.`")
+    await OxyXUB_bot(LeaveChannelRequest(ult.chat_id))
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="date$",
 )
 async def date(event):
@@ -104,10 +104,10 @@ async def date(event):
     y = dt.now(k).year
     d = dt.now(k).strftime("Date - %B %d, %Y\nTime- %H:%M:%S")
     k = calendar.month(y, m)
-    OxyX-UB = await eor(event, f"`{k}\n\n{d}`")
+    OxyXUB = await eor(event, f"`{k}\n\n{d}`")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="calc",
 )
 async def _(event):
@@ -157,7 +157,7 @@ async def aexec(code, event):
     return await locals()["__aexec"](event)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="chatinfo(?: |$)(.*)",
 )
 async def info(event):
@@ -174,11 +174,11 @@ async def info(event):
     return
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="listreserved$",
 )
 async def _(event):
-    result = await OxyX-UB_bot(functions.channels.GetAdminedPublicChannelsRequest())
+    result = await OxyXUB_bot(functions.channels.GetAdminedPublicChannelsRequest())
     output_str = ""
     r = result.chats
     for channel_obj in r:
@@ -189,7 +189,7 @@ async def _(event):
         await eor(event, output_str)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="stats$",
 )
 async def stats(
@@ -208,7 +208,7 @@ async def stats(
     unread_mentions = 0
     unread = 0
     dialog: Dialog
-    async for dialog in OxyX-UB_bot.iter_dialogs():
+    async for dialog in OxyXUB_bot.iter_dialogs():
         entity = dialog.entity
         if isinstance(entity, Channel):
             if entity.broadcast:
@@ -241,7 +241,7 @@ async def stats(
         unread += dialog.unread_count
     stop_time = time.time() - start_time
 
-    full_name = inline_mention(await OxyX-UB_bot.get_me())
+    full_name = inline_mention(await OxyXUB_bot.get_me())
     response = f"🔸 **Stats for {full_name}** \n\n"
     response += f"**Private Chats:** {private_chats} \n"
     response += f"**  •• **`Users: {private_chats - bots}` \n"
@@ -260,7 +260,7 @@ async def stats(
     await ok.edit(response)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="paste( (.*)|$)",
 )
 async def _(event):
@@ -313,14 +313,14 @@ async def _(event):
     q = f"paste-{key}"
     reply_text = f"• **Pasted to Nekobin :** [Neko](https://nekobin.com/{key})\n• **Raw Url :** : [Raw](https://nekobin.com/raw/{key})"
     try:
-        ok = await OxyX-UB_bot.inline_query(Var.BOT_USERNAME, q)
+        ok = await OxyXUB_bot.inline_query(Var.BOT_USERNAME, q)
         await ok[0].click(event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True)
         await xx.delete()
     except BaseException:
         await xx.edit(reply_text)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="info ?(.*)",
 )
 async def _(event):
@@ -399,7 +399,7 @@ async def _(event):
     await xx.delete()
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="invite ?(.*)",
     groups_only=True,
 )
@@ -409,7 +409,7 @@ async def _(ult):
     if not ult.is_channel and ult.is_group:
         for user_id in to_add_users.split(" "):
             try:
-                await OxyX-UB_bot(
+                await OxyXUB_bot(
                     AddChatUserRequest(
                         chat_id=ult.chat_id,
                         user_id=user_id,
@@ -422,7 +422,7 @@ async def _(ult):
     else:
         for user_id in to_add_users.split(" "):
             try:
-                await OxyX-UB_bot(
+                await OxyXUB_bot(
                     InviteToChannelRequest(
                         channel=ult.chat_id,
                         users=[user_id],
@@ -433,7 +433,7 @@ async def _(ult):
                 await xx.edit(str(e))
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern=r"rmbg$",
 )
 async def rmbg(event):
@@ -445,7 +445,7 @@ async def rmbg(event):
         )
     if event.reply_to_msg_id:
         reply = await event.get_reply_message()
-        dl = await OxyX-UB_bot.download_media(reply.media)
+        dl = await OxyXUB_bot.download_media(reply.media)
         if not dl.endswith(("webp", "jpg", "png", "jpeg")):
             os.remove(dl)
             return await xx.edit("`Unsupported Media`")
@@ -471,19 +471,19 @@ async def rmbg(event):
     if zz.mode != "RGB":
         zz.convert("RGB")
     zz.save("ult.webp", "webp")
-    await OxyX-UB_bot.send_file(
+    await OxyXUB_bot.send_file(
         event.chat_id,
         rmbgp,
         force_document=True,
         reply_to=reply,
     )
-    await OxyX-UB_bot.send_file(event.chat_id, "ult.webp", reply_to=reply)
+    await OxyXUB_bot.send_file(event.chat_id, "ult.webp", reply_to=reply)
     os.remove(rmbgp)
     os.remove("ult.webp")
     await xx.delete()
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="telegraph ?(.*)",
 )
 async def telegraphcmd(event):
@@ -492,7 +492,7 @@ async def telegraphcmd(event):
     if event.reply_to_msg_id:
         getmsg = await event.get_reply_message()
         if getmsg.photo or getmsg.video or getmsg.gif:
-            getit = await OxyX-UB_bot.download_media(getmsg)
+            getit = await OxyXUB_bot.download_media(getmsg)
             try:
                 variable = uf(getit)
                 os.remove(getit)
@@ -502,14 +502,14 @@ async def telegraphcmd(event):
                 amsg = f"Error - {e}"
             await xx.edit(amsg)
         elif getmsg.document:
-            getit = await OxyX-UB_bot.download_media(getmsg)
+            getit = await OxyXUB_bot.download_media(getmsg)
             ab = open(getit)
             cd = ab.read()
             ab.close()
             if input_str:
                 tcom = input_str
             else:
-                tcom = "OxyX-UB"
+                tcom = "OxyXUB"
             makeit = telegraph.create_page(title=tcom, content=[f"{cd}"])
             war = makeit["url"]
             os.remove(getit)
@@ -518,7 +518,7 @@ async def telegraphcmd(event):
             if input_str:
                 tcom = input_str
             else:
-                tcom = "OxyX-UB"
+                tcom = "OxyXUB"
             makeit = telegraph.create_page(title=tcom, content=[f"{getmsg.text}"])
             war = makeit["url"]
             await xx.edit(f"Pasted to Telegraph : [Telegraph]({war})")
@@ -528,7 +528,7 @@ async def telegraphcmd(event):
         await xx.edit("Reply to a Message !")
 
 
-@OxyX-UB_cmd(pattern="json")
+@OxyXUB_cmd(pattern="json")
 async def _(event):
     the_real_message = None
     reply_to_id = None
@@ -542,7 +542,7 @@ async def _(event):
     if len(the_real_message) > 4096:
         with io.BytesIO(str.encode(the_real_message)) as out_file:
             out_file.name = "json-ult.txt"
-            await OxyX-UB_bot.send_file(
+            await OxyXUB_bot.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -554,12 +554,12 @@ async def _(event):
         await eor(event, f"```{the_real_message}```")
 
 
-@OxyX-UB_cmd(pattern="suggest")
+@OxyXUB_cmd(pattern="suggest")
 async def sugg(event):
     if await event.get_reply_message():
         msgid = (await event.get_reply_message()).id
         try:
-            await OxyX-UB.send_message(
+            await OxyXUB.send_message(
                 event.chat_id,
                 file=InputMediaPoll(
                     poll=Poll(
@@ -585,7 +585,7 @@ async def sugg(event):
         )
 
 
-@OxyX-UB_cmd(pattern="ipinfo ?(.*)")
+@OxyXUB_cmd(pattern="ipinfo ?(.*)")
 async def ipinfo(event):
     xx = await eor(event, get_string("com_1"))
     ip = event.text.split(" ")

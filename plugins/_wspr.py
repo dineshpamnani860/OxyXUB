@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 import re
 
@@ -25,14 +25,14 @@ snap = {}
 buddhhu = []
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="wspr ?(.*)",
 )
 async def _(e):
     if e.reply_to_msg_id:
         okk = (await e.get_reply_message()).sender_id
         try:
-            zyx = await OxyX-UB_bot(gu(id=okk))
+            zyx = await OxyXUB_bot(gu(id=okk))
             put = zyx.user.username
         except ValueError as ex:
             return await eor(e, str(ex))
@@ -42,7 +42,7 @@ async def _(e):
         put = e.pattern_match.group(1)
     if put:
         try:
-            results = await OxyX-UB_bot.inline_query(Var.BOT_USERNAME, f"msg {put}")
+            results = await OxyXUB_bot.inline_query(Var.BOT_USERNAME, f"msg {put}")
         except rep:
             return await eor(
                 e,
@@ -73,7 +73,7 @@ async def _(e):
         desc = "Touch me"
     if "wspr" not in vvv:
         try:
-            logi = await OxyX-UB_bot(gu(id=query))
+            logi = await OxyXUB_bot(gu(id=query))
             name = logi.user.first_name
             ids = logi.user.id
             username = logi.user.username
@@ -118,7 +118,7 @@ async def _(e):
             )
     else:
         try:
-            logi = await OxyX-UB_bot.get_entity(query)
+            logi = await OxyXUB_bot.get_entity(query)
             button = [
                 Button.inline("Secret Msg", data=f"dd_{logi.id}"),
                 Button.inline("Delete Msg", data=f"del"),

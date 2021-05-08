@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -18,7 +18,7 @@ import requests
 from . import *
 
 
-@OxyX-UB_cmd(pattern="webshot")
+@OxyXUB_cmd(pattern="webshot")
 async def webss(event):
     xx = await eor(event, get_string("com_1"))
     mssg = event.text.split(" ", maxsplit=2)

@@ -1,9 +1,9 @@
 # OxyX - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -62,7 +62,7 @@ from telethon.tl.types import ChatAdminRights, InputMessagesFilterPinned
 from . import *
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="promote ?(.*)",
     groups_only=True,
     admins_only=True,
@@ -76,7 +76,7 @@ async def prmte(ult):
     if not user:
         return await xx.edit("`Reply to a user to promote him!`")
     try:
-        await OxyX-UB_bot(
+        await OxyXUB_bot(
             EditAdminRequest(
                 ult.chat_id,
                 user.id,
@@ -100,7 +100,7 @@ async def prmte(ult):
     await xx.delete()
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="demote ?(.*)",
     groups_only=True,
     admins_only=True,
@@ -114,7 +114,7 @@ async def dmote(ult):
     if not user:
         return await xx.edit("`Reply to a user to demote him!`")
     try:
-        await OxyX-UB_bot(
+        await OxyXUB_bot(
             EditAdminRequest(
                 ult.chat_id,
                 user.id,
@@ -138,7 +138,7 @@ async def dmote(ult):
     await xx.delete()
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="ban ?(.*)",
     groups_only=True,
     admins_only=True,
@@ -152,7 +152,7 @@ async def bban(ult):
     if str(user.id) in DEVLIST:
         return await xx.edit(" `LoL, I can't Ban my Developer 😂`")
     try:
-        await OxyX-UB_bot.edit_permissions(ult.chat_id, user.id, view_messages=False)
+        await OxyXUB_bot.edit_permissions(ult.chat_id, user.id, view_messages=False)
     except BadRequestError:
         return await xx.edit("`I don't have the right to ban a user.`")
     except UserIdInvalidError:
@@ -175,7 +175,7 @@ async def bban(ult):
         )
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="unban ?(.*)",
     groups_only=True,
     admins_only=True,
@@ -187,7 +187,7 @@ async def uunban(ult):
     if not user:
         return await xx.edit("`Reply to a user or give username to unban him!`")
     try:
-        await OxyX-UB_bot.edit_permissions(ult.chat_id, user.id, view_messages=True)
+        await OxyXUB_bot.edit_permissions(ult.chat_id, user.id, view_messages=True)
     except BadRequestError:
         return await xx.edit("`I don't have the right to unban a user.`")
     except UserIdInvalidError:
@@ -202,7 +202,7 @@ async def uunban(ult):
         )
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="kick ?(.*)",
     groups_only=True,
     admins_only=True,
@@ -217,10 +217,10 @@ async def kck(ult):
         return await xx.edit("`Kick? Whom? I couldn't get his info...`")
     if str(user.id) in DEVLIST:
         return await xx.edit(" `Lol, I can't Kick my Developer`😂")
-    if user.id == OxyX-UB_bot.uid:
+    if user.id == OxyXUB_bot.uid:
         return await xx.edit("`You Can't kick urself`")
     try:
-        await OxyX-UB_bot.kick_participant(ult.chat_id, user.id)
+        await OxyXUB_bot.kick_participant(ult.chat_id, user.id)
         await asyncio.sleep(0.5)
     except BadRequestError:
         return await xx.edit("`I don't have the right to kick a user.`")
@@ -238,14 +238,14 @@ async def kck(ult):
         )
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="pin ?(.*)",
 )
 async def pin(msg):
     if not msg.is_private:
         # for pin(s) in private messages
         await msg.get_chat()
-    cht = await OxyX-UB_bot.get_entity(msg.chat_id)
+    cht = await OxyXUB_bot.get_entity(msg.chat_id)
     xx = msg.reply_to_msg_id
     tt = msg.text
     try:
@@ -261,7 +261,7 @@ async def pin(msg):
         slnt = True
         x = await eor(msg, get_string("com_1"))
         try:
-            await OxyX-UB_bot.pin_message(msg.chat_id, xx, notify=slnt)
+            await OxyXUB_bot.pin_message(msg.chat_id, xx, notify=slnt)
         except BadRequestError:
             return await x.edit("`Hmm, I'm have no rights here...`")
         except Exception as e:
@@ -269,7 +269,7 @@ async def pin(msg):
         await x.edit(f"`Pinned` [this message](https://t.me/c/{cht.id}/{xx})!")
     else:
         try:
-            await OxyX-UB_bot.pin_message(msg.chat_id, xx, notify=False)
+            await OxyXUB_bot.pin_message(msg.chat_id, xx, notify=False)
         except BadRequestError:
             return await eor(msg, "`Hmm, I'm have no rights here...`")
         except Exception as e:
@@ -280,7 +280,7 @@ async def pin(msg):
             pass
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="unpin($| (.*))",
 )
 async def unp(ult):
@@ -292,14 +292,14 @@ async def unp(ult):
     msg = ult.reply_to_msg_id
     if msg and not ch:
         try:
-            await OxyX-UB_bot.unpin_message(ult.chat_id, msg)
+            await OxyXUB_bot.unpin_message(ult.chat_id, msg)
         except BadRequestError:
             return await xx.edit("`Hmm, I'm have no rights here...`")
         except Exception as e:
             return await xx.edit(f"**ERROR:**\n`{str(e)}`")
     elif ch == "all":
         try:
-            await OxyX-UB_bot.unpin_message(ult.chat_id)
+            await OxyXUB_bot.unpin_message(ult.chat_id)
         except BadRequestError:
             return await xx.edit("`Hmm, I'm have no rights here...`")
         except Exception as e:
@@ -311,7 +311,7 @@ async def unp(ult):
     await xx.edit("`Unpinned!`")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="purge$",
 )
 async def fastpurger(purg):
@@ -320,17 +320,17 @@ async def fastpurger(purg):
     count = 0
     if not purg.reply_to_msg_id:
         return await eod(purg, "`Reply to a message to purge from.`", time=10)
-    async for msg in OxyX-UB_bot.iter_messages(chat, min_id=purg.reply_to_msg_id):
+    async for msg in OxyXUB_bot.iter_messages(chat, min_id=purg.reply_to_msg_id):
         msgs.append(msg)
         count = count + 1
         msgs.append(purg.reply_to_msg_id)
         if len(msgs) == 100:
-            await OxyX-UB_bot.delete_messages(chat, msgs)
+            await OxyXUB_bot.delete_messages(chat, msgs)
             msgs = []
 
     if msgs:
-        await OxyX-UB_bot.delete_messages(chat, msgs)
-    done = await OxyX-UB_bot.send_message(
+        await OxyXUB_bot.delete_messages(chat, msgs)
+    done = await OxyXUB_bot.send_message(
         purg.chat_id,
         "__Fast purge complete!__\n**Purged** `"
         + str(len(msgs))
@@ -342,7 +342,7 @@ async def fastpurger(purg):
     await done.delete()
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="purgeme$",
 )
 async def fastpurgerme(purg):
@@ -351,7 +351,7 @@ async def fastpurgerme(purg):
     count = 0
     if not purg.reply_to_msg_id:
         return await eod(purg, "`Reply to a message to purge from.`", time=10)
-    async for msg in OxyX-UB_bot.iter_messages(
+    async for msg in OxyXUB_bot.iter_messages(
         chat,
         from_user="me",
         min_id=purg.reply_to_msg_id,
@@ -360,12 +360,12 @@ async def fastpurgerme(purg):
         count = count + 1
         msgs.append(purg.reply_to_msg_id)
         if len(msgs) == 100:
-            await OxyX-UB_bot.delete_messages(chat, msgs)
+            await OxyXUB_bot.delete_messages(chat, msgs)
             msgs = []
 
     if msgs:
-        await OxyX-UB_bot.delete_messages(chat, msgs)
-    done = await OxyX-UB_bot.send_message(
+        await OxyXUB_bot.delete_messages(chat, msgs)
+    done = await OxyXUB_bot.send_message(
         purg.chat_id,
         "__Fast purge complete!__\n**Purged** `" + str(count) + "` **messages.**",
     )
@@ -373,7 +373,7 @@ async def fastpurgerme(purg):
     await done.delete()
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="purgeall$",
 )
 async def _(e):
@@ -399,7 +399,7 @@ async def _(e):
         )
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="del$",
 )
 async def delete_it(delme):
@@ -416,16 +416,16 @@ async def delete_it(delme):
             )
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="edit",
 )
 async def editer(edit):
     message = edit.text
     chat = await edit.get_input_chat()
-    self_id = await OxyX-UB_bot.get_peer_id("me")
+    self_id = await OxyXUB_bot.get_peer_id("me")
     string = str(message[6:])
     i = 1
-    async for message in OxyX-UB_bot.iter_messages(chat, self_id):
+    async for message in OxyXUB_bot.iter_messages(chat, self_id):
         if i == 2:
             await message.edit(string)
             await edit.delete()
@@ -433,7 +433,7 @@ async def editer(edit):
         i = i + 1
 
 
-@OxyX-UB_cmd(pattern="pinned")
+@OxyXUB_cmd(pattern="pinned")
 async def get_pinned(event):
     x = await eor(event, get_string("com_1"))
     chat_id = (str(event.chat_id)).replace("-100", "")
@@ -441,7 +441,7 @@ async def get_pinned(event):
     tem = ""
     c = 0
 
-    async for i in OxyX-UB.iter_messages(
+    async for i in OxyXUB.iter_messages(
         event.chat_id, filter=InputMessagesFilterPinned
     ):
         c += 1
@@ -453,14 +453,14 @@ async def get_pinned(event):
         return await eod(x, "There is no pinned message in chat!", time=5)
 
 
-@OxyX-UB_cmd(pattern="listpinned")
+@OxyXUB_cmd(pattern="listpinned")
 async def get_all_pinned(event):
     x = await eor(event, get_string("com_1"))
     chat_id = (str(event.chat_id)).replace("-100", "")
     chat_name = (await event.get_chat()).title
     a = ""
     c = 1
-    async for i in OxyX-UB.iter_messages(
+    async for i in OxyXUB.iter_messages(
         event.chat_id, filter=InputMessagesFilterPinned
     ):
         a += f"{c}. <a href=https://t.me/c/{chat_id}/{i.id}>Go to message.</a>\n"

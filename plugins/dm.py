@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 """
 ✘ Commands Available -
 
@@ -14,7 +14,7 @@
 from . import *
 
 
-@OxyX-UB_cmd(pattern="dm ?(.*)")
+@OxyXUB_cmd(pattern="dm ?(.*)")
 async def dm(e):
     if len(e.text) > 3:
         if not e.text[3] == " ":  # weird fix
@@ -28,14 +28,14 @@ async def dm(e):
     msg = ""
     masg = await e.get_reply_message()
     if e.reply_to_msg_id:
-        await OxyX-UB_bot.send_message(chat_id, masg)
+        await OxyXUB_bot.send_message(chat_id, masg)
         await eod(e, "`⚜️Message Delivered!`", time=4)
     for i in c[1:]:
         msg += i + " "
     if msg == "":
         return
     try:
-        await OxyX-UB_bot.send_message(chat_id, msg)
+        await OxyXUB_bot.send_message(chat_id, msg)
         await eod(e, "`⚜️Message Delivered!⚜️`", time=4)
     except BaseException:
         await eod(

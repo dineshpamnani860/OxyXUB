@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -22,14 +22,14 @@
 """
 import os
 
-from pyOxyX-UB.functions.snips_db import *
+from pyOxyXUB.functions.snips_db import *
 from telegraph import upload_file as uf
 from telethon.utils import pack_bot_file_id
 
 from . import *
 
 
-@OxyX-UB_cmd(pattern="addsnip ?(.*)")
+@OxyXUB_cmd(pattern="addsnip ?(.*)")
 async def an(e):
     wrd = (e.pattern_match.group(1)).lower()
     wt = await e.get_reply_message()
@@ -63,7 +63,7 @@ async def an(e):
     await eor(e, f"Done : snip `${wrd}` Saved.")
 
 
-@OxyX-UB_cmd(pattern="remsnip ?(.*)")
+@OxyXUB_cmd(pattern="remsnip ?(.*)")
 async def rs(e):
     wrd = (e.pattern_match.group(1)).lower()
     if not wrd:
@@ -74,7 +74,7 @@ async def rs(e):
     await eor(e, f"Done : snip `${wrd}` Removed.")
 
 
-@OxyX-UB_cmd(pattern="listsnip")
+@OxyXUB_cmd(pattern="listsnip")
 async def lsnote(e):
     x = list_snip()
     if x:
@@ -84,7 +84,7 @@ async def lsnote(e):
         await eor(e, "No Snips Found Here")
 
 
-@OxyX-UB_bot.on(events.NewMessage(outgoing=True))
+@OxyXUB_bot.on(events.NewMessage(outgoing=True))
 async def notes(e):
     xx = (e.text).lower()
     if not xx.startswith("$"):
@@ -102,7 +102,7 @@ async def notes(e):
             if rep:
                 await rep.reply(msg, file=media)
             else:
-                await OxyX-UB_bot.send_message(e.chat_id, msg, file=media)
+                await OxyXUB_bot.send_message(e.chat_id, msg, file=media)
                 await e.delete()
 
 

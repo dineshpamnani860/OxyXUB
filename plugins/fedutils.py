@@ -1,9 +1,9 @@
 # OxyX - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -33,14 +33,14 @@ from . import *
 bot = "@MissRose_bot"
 
 
-@OxyX-UB_cmd(pattern="superfban ?(.*)")
+@OxyXUB_cmd(pattern="superfban ?(.*)")
 async def _(event):
     msg = await eor(event, "Starting a Mass-FedBan...")
     fedList = []
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         if previous_message.media:
-            downloaded_file_name = await OxyX-UB_bot.download_media(
+            downloaded_file_name = await OxyXUB_bot.download_media(
                 previous_message,
                 "fedlist",
             )
@@ -86,7 +86,7 @@ async def _(event):
             return
         elif FBAN.startswith("@"):
             try:
-                x = await OxyX-UB_bot(GetFullUserRequest(FBAN))
+                x = await OxyXUB_bot(GetFullUserRequest(FBAN))
                 uid = x.user.id
                 if str(uid) in DEVLIST:
                     await msg.edit("You can't ban my dev you noob!!")
@@ -103,7 +103,7 @@ async def _(event):
         chat = await event.get_chat()
     if not len(fedList):
         for a in range(3):
-            async with OxyX-UB_bot.conversation("@MissRose_bot") as bot_conv:
+            async with OxyXUB_bot.conversation("@MissRose_bot") as bot_conv:
                 await bot_conv.send_message("/start")
                 await asyncio.sleep(3)
                 await bot_conv.send_message("/myfeds")
@@ -121,7 +121,7 @@ async def _(event):
                     fedfile = await bot_conv.get_response()
                     await asyncio.sleep(3)
                     if fedfile.media:
-                        downloaded_file_name = await OxyX-UB_bot.download_media(
+                        downloaded_file_name = await OxyXUB_bot.download_media(
                             fedfile,
                             "fedlist",
                         )
@@ -163,7 +163,7 @@ async def _(event):
             return
     await msg.edit(f"FBaning in {len(fedList)} feds.")
     try:
-        await OxyX-UB_bot.send_message(chat, f"/start")
+        await OxyXUB_bot.send_message(chat, f"/start")
     except BaseException:
         await msg.edit("Specified FBan Group ID is incorrect.")
         return
@@ -175,12 +175,12 @@ async def _(event):
     exCount = 0
     for fed in fedList:
         if udB.get("EXCLUDE_FED") and fed in excludeFed:
-            await OxyX-UB_bot.send_message(chat, f"{fed} Excluded.")
+            await OxyXUB_bot.send_message(chat, f"{fed} Excluded.")
             exCount += 1
             continue
-        await OxyX-UB_bot.send_message(chat, f"/joinfed {fed}")
+        await OxyXUB_bot.send_message(chat, f"/joinfed {fed}")
         await asyncio.sleep(3)
-        await OxyX-UB_bot.send_message(chat, f"/fban {FBAN} {REASON}")
+        await OxyXUB_bot.send_message(chat, f"/fban {FBAN} {REASON}")
         await asyncio.sleep(3)
     try:
         os.remove("fedlist")
@@ -191,14 +191,14 @@ async def _(event):
     )
 
 
-@OxyX-UB_cmd(pattern="superunfban ?(.*)")
+@OxyXUB_cmd(pattern="superunfban ?(.*)")
 async def _(event):
     msg = await eor(event, "Starting a Mass-UnFedBan...")
     fedList = []
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         if previous_message.media:
-            downloaded_file_name = await OxyX-UB_bot.download_media(
+            downloaded_file_name = await OxyXUB_bot.download_media(
                 previous_message,
                 "fedlist",
             )
@@ -251,7 +251,7 @@ async def _(event):
         chat = await event.get_chat()
     if not len(fedList):
         for a in range(3):
-            async with OxyX-UB_bot.conversation("@MissRose_bot") as bot_conv:
+            async with OxyXUB_bot.conversation("@MissRose_bot") as bot_conv:
                 await bot_conv.send_message("/start")
                 await asyncio.sleep(3)
                 await bot_conv.send_message("/myfeds")
@@ -269,7 +269,7 @@ async def _(event):
                     fedfile = await bot_conv.get_response()
                     await asyncio.sleep(3)
                     if fedfile.media:
-                        downloaded_file_name = await OxyX-UB_bot.download_media(
+                        downloaded_file_name = await OxyXUB_bot.download_media(
                             fedfile,
                             "fedlist",
                         )
@@ -311,7 +311,7 @@ async def _(event):
             return
     await msg.edit(f"UnFBaning in {len(fedList)} feds.")
     try:
-        await OxyX-UB_bot.send_message(chat, f"/start")
+        await OxyXUB_bot.send_message(chat, f"/start")
     except BaseException:
         await msg.edit("Specified FBan Group ID is incorrect.")
         return
@@ -323,12 +323,12 @@ async def _(event):
     exCount = 0
     for fed in fedList:
         if udB.get("EXCLUDE_FED") and fed in excludeFed:
-            await OxyX-UB_bot.send_message(chat, f"{fed} Excluded.")
+            await OxyXUB_bot.send_message(chat, f"{fed} Excluded.")
             exCount += 1
             continue
-        await OxyX-UB_bot.send_message(chat, f"/joinfed {fed}")
+        await OxyXUB_bot.send_message(chat, f"/joinfed {fed}")
         await asyncio.sleep(3)
-        await OxyX-UB_bot.send_message(chat, f"/unfban {FBAN} {REASON}")
+        await OxyXUB_bot.send_message(chat, f"/unfban {FBAN} {REASON}")
         await asyncio.sleep(3)
     try:
         os.remove("fedlist")
@@ -339,7 +339,7 @@ async def _(event):
     )
 
 
-@OxyX-UB_cmd(pattern="fstat ?(.*)")
+@OxyXUB_cmd(pattern="fstat ?(.*)")
 async def _(event):
     ok = await eor(event, "`Checking...`")
     if event.reply_to_msg_id:
@@ -357,7 +357,7 @@ async def _(event):
         )
         return
     else:
-        async with OxyX-UB.conversation(bot) as conv:
+        async with OxyXUB.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -371,33 +371,33 @@ async def _(event):
                     await audio.click(0)
                     await asyncio.sleep(2)
                     audio = await conv.get_response()
-                    await OxyX-UB.send_file(
+                    await OxyXUB.send_file(
                         event.chat_id,
                         audio,
-                        caption=f"List of feds {user} has been banned in.\n\nCollected using OxyX-UB.",
+                        caption=f"List of feds {user} has been banned in.\n\nCollected using OxyXUB.",
                         link_preview=False,
                     )
                     await ok.delete()
                 else:
                     okk = await conv.get_edit()
                     await ok.edit(okk.message)
-                await OxyX-UB.send_read_acknowledge(bot)
+                await OxyXUB.send_read_acknowledge(bot)
             except YouBlockedUserError:
                 await ok.edit("**Error**\n `Unblock` @MissRose_Bot `and try again!")
 
 
-@OxyX-UB_cmd(pattern="fedinfo ?(.*)")
+@OxyXUB_cmd(pattern="fedinfo ?(.*)")
 async def _(event):
     ok = await event.edit("`Extracting information...`")
     sysarg = event.pattern_match.group(1)
-    async with OxyX-UB.conversation(bot) as conv:
+    async with OxyXUB.conversation(bot) as conv:
         try:
             await conv.send_message("/start")
             await conv.get_response()
             await conv.send_message("/fedinfo " + sysarg)
             audio = await conv.get_response()
-            await OxyX-UB.send_read_acknowledge(bot)
-            await ok.edit(audio.text + "\n\nFedInfo Extracted by OxyX-UB")
+            await OxyXUB.send_read_acknowledge(bot)
+            await ok.edit(audio.text + "\n\nFedInfo Extracted by OxyXUB")
         except YouBlockedUserError:
             await ok.edit("**Error**\n `Unblock` @MissRose_Bot `and try again!")
 

@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -29,7 +29,7 @@ from telethon.tl.functions.channels import DeleteChannelRequest
 from . import *
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="delchat$",
     groups_only=True,
 )
@@ -44,7 +44,7 @@ async def _(e):
     await e.client.send_message(Var.LOG_CHANNEL, f"#Deleted\nDeleted {e.chat_id}")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="getlink$",
     groups_only=True,
 )
@@ -59,7 +59,7 @@ async def _(e):
     await eod(xx, f"Link:- {r.link}")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="create (b|g|c)(?: |$)(.*)",
 )
 async def _(e):

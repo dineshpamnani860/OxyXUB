@@ -1,9 +1,9 @@
 # OxyX - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -70,7 +70,7 @@ def deEmojify(inputString: str) -> str:
     return re.sub(EMOJI_PATTERN, "", inputString)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="waifu ?(.*)",
 )
 async def waifu(animu):
@@ -86,7 +86,7 @@ async def waifu(animu):
     waifus = [32, 33, 37, 40, 41, 42, 58, 20]
     finalcall = "#" + (str(random.choice(waifus)))
     try:
-        sticcers = await OxyX-UB_bot.inline_query(
+        sticcers = await OxyXUB_bot.inline_query(
             "stickerizerbot",
             f"{finalcall}{(deEmojify(text))}",
         )
@@ -103,7 +103,7 @@ async def waifu(animu):
         await xx.edit("Sorry boss, I can't send Sticker Here !!")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="convert ?(.*)",
 )
 async def uconverter(event):
@@ -139,12 +139,12 @@ async def uconverter(event):
     await xx.delete()
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="kang",
 )
 async def hehe(args):
     xx = await eor(args, "`Processing...`")
-    user = await OxyX-UB_bot.get_me()
+    user = await OxyXUB_bot.get_me()
     if not user.username:
         user.username = user.first_name
     message = await args.get_reply_message()
@@ -156,11 +156,11 @@ async def hehe(args):
         if isinstance(message.media, MessageMediaPhoto):
             await xx.edit(f"`{random.choice(KANGING_STR)}`")
             photo = io.BytesIO()
-            photo = await OxyX-UB_bot.download_media(message.photo, photo)
+            photo = await OxyXUB_bot.download_media(message.photo, photo)
         elif "image" in message.media.document.mime_type.split("/"):
             await xx.edit(f"`{random.choice(KANGING_STR)}`")
             photo = io.BytesIO()
-            await OxyX-UB_bot.download_file(message.media.document, photo)
+            await OxyXUB_bot.download_file(message.media.document, photo)
             if (
                 DocumentAttributeFilename(file_name="sticker.webp")
                 in message.media.document.attributes
@@ -176,7 +176,7 @@ async def hehe(args):
             photo = "ult.webp"
         elif "tgsticker" in message.media.document.mime_type:
             await xx.edit(f"`{random.choice(KANGING_STR)}`")
-            await OxyX-UB_bot.download_file(
+            await OxyXUB_bot.download_file(
                 message.media.document,
                 "AnimatedSticker.tgs",
             )
@@ -202,7 +202,7 @@ async def hehe(args):
             emoji = "🔰"
         pack = 1
         if len(splat) == 3:
-            pack = splat[2]  # User sent OxyX-UB_both
+            pack = splat[2]  # User sent OxyXUB_both
             emoji = splat[1]
         elif len(splat) == 2:
             if splat[1].isnumeric():
@@ -233,10 +233,10 @@ async def hehe(args):
             "  A <strong>Telegram</strong> user has created the <strong>Sticker&nbsp;Set</strong>."
             not in htmlstr
         ):
-            async with OxyX-UB_bot.conversation("@Stickers") as conv:
+            async with OxyXUB_bot.conversation("@Stickers") as conv:
                 await conv.send_message("/addsticker")
                 await conv.get_response()
-                await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                 await conv.send_message(packname)
                 x = await conv.get_response()
                 while "120" in x.text:
@@ -253,10 +253,10 @@ async def hehe(args):
                     if x.text == "Invalid pack selected.":
                         await conv.send_message(cmd)
                         await conv.get_response()
-                        await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                        await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                         await conv.send_message(packnick)
                         await conv.get_response()
-                        await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                        await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                         if is_anim:
                             await conv.send_file("AnimatedSticker.tgs")
                             remove("AnimatedSticker.tgs")
@@ -265,21 +265,21 @@ async def hehe(args):
                             await conv.send_file(file, force_document=True)
                         await conv.get_response()
                         await conv.send_message(emoji)
-                        await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                        await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                         await conv.get_response()
                         await conv.send_message("/publish")
                         if is_anim:
                             await conv.get_response()
                             await conv.send_message(f"<{packnick}>")
                         await conv.get_response()
-                        await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                        await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                         await conv.send_message("/skip")
-                        await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                        await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                         await conv.get_response()
                         await conv.send_message(packname)
-                        await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                        await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                         await conv.get_response()
-                        await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                        await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                         await xx.edit(
                             f"`Sticker added in a Different Pack !\
                             \nThis Pack is Newly created!\
@@ -300,20 +300,20 @@ async def hehe(args):
                     )
                     return
                 await conv.send_message(emoji)
-                await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                 await conv.get_response()
                 await conv.send_message("/done")
                 await conv.get_response()
-                await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
         else:
             await xx.edit("`Brewing a new Pack...`")
-            async with OxyX-UB_bot.conversation("Stickers") as conv:
+            async with OxyXUB_bot.conversation("Stickers") as conv:
                 await conv.send_message(cmd)
                 await conv.get_response()
-                await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                 await conv.send_message(packnick)
                 await conv.get_response()
-                await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                 if is_anim:
                     await conv.send_file("AnimatedSticker.tgs")
                     remove("AnimatedSticker.tgs")
@@ -327,7 +327,7 @@ async def hehe(args):
                     )
                     return
                 await conv.send_message(emoji)
-                await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                 await conv.get_response()
                 await conv.send_message("/publish")
                 if is_anim:
@@ -335,14 +335,14 @@ async def hehe(args):
                     await conv.send_message(f"<{packnick}>")
 
                 await conv.get_response()
-                await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                 await conv.send_message("/skip")
-                await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                 await conv.get_response()
                 await conv.send_message(packname)
-                await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
                 await conv.get_response()
-                await OxyX-UB_bot.send_read_acknowledge(conv.chat_id)
+                await OxyXUB_bot.send_read_acknowledge(conv.chat_id)
         await xx.edit(
             f"`Kanged!`\
             \n`Emoji` - {emoji}\
@@ -355,7 +355,7 @@ async def hehe(args):
             pass
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="round$",
 )
 async def ultdround(event):
@@ -405,7 +405,7 @@ async def ultdround(event):
     os.remove("ult.webp")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="destroy$",
 )
 async def ultdestroy(event):
@@ -416,9 +416,9 @@ async def ultdestroy(event):
         ult.media and ult.media.document and "tgsticker" in ult.media.document.mime_type
     ):
         return await eor(event, "`Reply to Animated Sticker only`")
-    await event.client.download_media(ult, "OxyX-UB.tgs")
+    await event.client.download_media(ult, "OxyXUB.tgs")
     xx = await eor(event, "`Processing...`")
-    os.system("lottie_convert.py OxyX-UB.tgs json.json")
+    os.system("lottie_convert.py OxyXUB.tgs json.json")
     json = open("json.json")
     jsn = json.read()
     json.close()
@@ -438,10 +438,10 @@ async def ultdestroy(event):
         .replace("[9]", "[110]")
     )
     open("json.json", "w").write(jsn)
-    os.system("lottie_convert.py json.json OxyX-UB.tgs")
+    os.system("lottie_convert.py json.json OxyXUB.tgs")
     await event.client.send_file(
         event.chat_id,
-        file="OxyX-UB.tgs",
+        file="OxyXUB.tgs",
         force_document=False,
         reply_to=event.reply_to_msg_id,
     )
@@ -449,7 +449,7 @@ async def ultdestroy(event):
     os.remove("json.json")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="tiny$",
 )
 async def ultiny(event):
@@ -458,8 +458,8 @@ async def ultiny(event):
         await eor(event, "`Reply To Media`")
         return
     xx = await eor(event, "`processing...`")
-    ik = await OxyX-UB_bot.download_media(reply)
-    im1 = Image.open("resources/extras/OxyX-UB_blank.png")
+    ik = await OxyXUB_bot.download_media(reply)
+    im1 = Image.open("resources/extras/OxyXUB_blank.png")
     if ik.endswith(".tgs"):
         await event.client.download_media(reply, "ult.tgs")
         os.system("lottie_convert.py ult.tgs json.json")

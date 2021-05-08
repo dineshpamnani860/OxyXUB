@@ -1,11 +1,11 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
-from pyOxyX-UB.dB.database import Var
+from pyOxyXUB.dB.database import Var
 from support import *
 from telethon.errors.rpcerrorlist import BotInlineDisabledError as dis
 from telethon.errors.rpcerrorlist import BotMethodInvalidError as bmi
@@ -14,7 +14,7 @@ from telethon.errors.rpcerrorlist import BotResponseTimeoutError as rep
 from . import *
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="help ?(.*)",
 )
 async def ult(ult):
@@ -45,7 +45,7 @@ async def ult(ult):
             await eor(ult, "Error 🤔 occured.")
     else:
         try:
-            results = await OxyX-UB_bot.inline_query(tgbot, "ultd")
+            results = await OxyXUB_bot.inline_query(tgbot, "ultd")
         except rep:
             return await eor(
                 ult,

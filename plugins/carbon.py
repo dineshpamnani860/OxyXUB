@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -173,7 +173,7 @@ all_col = [
 ]
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="carbon",
 )
 async def crbn(event):
@@ -181,7 +181,7 @@ async def crbn(event):
     if event.reply_to_msg_id:
         temp = await event.get_reply_message()
         if temp.media:
-            b = await OxyX-UB_bot.download_media(temp)
+            b = await OxyXUB_bot.download_media(temp)
             a = open(b)
             code = a.read()
             a.close()
@@ -191,9 +191,9 @@ async def crbn(event):
     else:
         code = event.text.split(" ", maxsplit=1)[1]
     carbon = Carbon(code=code)
-    xx = await carbon.save("OxyX-UB_carbon")
+    xx = await carbon.save("OxyXUB_carbon")
     await xxxx.delete()
-    await OxyX-UB_bot.send_file(
+    await OxyXUB_bot.send_file(
         event.chat_id,
         xx,
         caption=f"Carbonised by [{OWNER_NAME}](tg://user?id={OWNER_ID})",
@@ -202,7 +202,7 @@ async def crbn(event):
     os.remove(xx)
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="rcarbon",
 )
 async def crbn(event):
@@ -210,7 +210,7 @@ async def crbn(event):
     if event.reply_to_msg_id:
         temp = await event.get_reply_message()
         if temp.media:
-            b = await OxyX-UB_bot.download_media(temp)
+            b = await OxyXUB_bot.download_media(temp)
             a = open(b)
             code = a.read()
             a.close()
@@ -221,9 +221,9 @@ async def crbn(event):
         code = event.text.split(" ", maxsplit=1)[1]
     col = random.choice(all_col)
     carbon = Carbon(code=code, background=col)
-    xx = await carbon.save("OxyX-UB_carbon")
+    xx = await carbon.save("OxyXUB_carbon")
     await xxxx.delete()
-    await OxyX-UB_bot.send_file(
+    await OxyXUB_bot.send_file(
         event.chat_id,
         xx,
         caption=f"Carbonised by [{OWNER_NAME}](tg://user?id={OWNER_ID})",

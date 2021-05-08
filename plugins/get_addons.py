@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -16,7 +16,7 @@ import requests
 from . import *
 
 
-@OxyX-UB_cmd(pattern="getaddons ?(.*)")
+@OxyXUB_cmd(pattern="getaddons ?(.*)")
 async def get_the_addons_lol(event):
     thelink = event.pattern_match.group(1)
     xx = await eor(event, get_string("com_1"))

@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available
@@ -38,12 +38,12 @@
 
 import asyncio
 
-from pyOxyX-UB.functions.ch_db import *
+from pyOxyXUB.functions.ch_db import *
 
 from . import *
 
 
-@OxyX-UB_bot.on(events.NewMessage())
+@OxyXUB_bot.on(events.NewMessage())
 async def _(e):
     if not udB.get("AUTOPOST") == "True":
         return
@@ -56,16 +56,16 @@ async def _(e):
     for ys in y:
         try:
             if e.text and not e.media:
-                await OxyX-UB_bot.send_message(int(ys), e.text)
+                await OxyXUB_bot.send_message(int(ys), e.text)
             elif e.media and e.text:
-                await OxyX-UB_bot.send_file(int(ys), e.media, caption=e.text)
+                await OxyXUB_bot.send_file(int(ys), e.media, caption=e.text)
             else:
-                await OxyX-UB_bot.send_file(int(ys), e.media)
+                await OxyXUB_bot.send_file(int(ys), e.media)
         except Exception as e:
-            await OxyX-UB_bot.send_message(bot.me.id, str(e))
+            await OxyXUB_bot.send_message(bot.me.id, str(e))
 
 
-@OxyX-UB_cmd(pattern="shift (.*)")
+@OxyXUB_cmd(pattern="shift (.*)")
 async def _(e):
     x = e.pattern_match.group(1)
     z = await eor(e, "`processing..`")
@@ -74,7 +74,7 @@ async def _(e):
         c = int(a)
     except Exception:
         try:
-            c = (await OxyX-UB_bot.get_entity(a)).id
+            c = (await OxyXUB_bot.get_entity(a)).id
         except Exception:
             await z.edit("invalid Channel given")
             return
@@ -82,20 +82,20 @@ async def _(e):
         d = int(b)
     except Exception:
         try:
-            d = (await OxyX-UB_bot.get_entity(b)).id
+            d = (await OxyXUB_bot.get_entity(b)).id
         except Exception:
             await z.edit("invalid Channel given")
             return
-    async for msg in OxyX-UB_bot.iter_messages(int(c), reverse=True):
+    async for msg in OxyXUB_bot.iter_messages(int(c), reverse=True):
         try:
             await asyncio.sleep(0.7)
-            await OxyX-UB_bot.send_message(int(d), msg)
+            await OxyXUB_bot.send_message(int(d), msg)
         except BaseException:
             pass
     await z.edit("Done")
 
 
-@OxyX-UB_cmd(pattern="asource (.*)")
+@OxyXUB_cmd(pattern="asource (.*)")
 async def source(e):
     x = e.pattern_match.group(1)
     try:
@@ -113,7 +113,7 @@ async def source(e):
         await eor(e, "Source channel already added")
 
 
-@OxyX-UB_cmd(pattern="dsource ?(.*)")
+@OxyXUB_cmd(pattern="dsource ?(.*)")
 async def dd(event):
     chat_id = event.pattern_match.group(1)
     x = await eor(event, "processing")
@@ -146,7 +146,7 @@ async def dd(event):
         await x.delete()
 
 
-@OxyX-UB_cmd(pattern="listsource")
+@OxyXUB_cmd(pattern="listsource")
 async def list_all(event):
     x = await eor(event, "`Calculating...`")
     channels = get_source_channels()
@@ -157,7 +157,7 @@ async def list_all(event):
     for channel in channels:
         name = ""
         try:
-            name = (await OxyX-UB.get_entity(int(channel))).title
+            name = (await OxyXUB.get_entity(int(channel))).title
         except BaseException:
             name = ""
         msg += f"=> **{name}** [`{channel}`]\n"
@@ -166,7 +166,7 @@ async def list_all(event):
         MSG = msg.replace("*", "").replace("`", "")
         with io.BytesIO(str.encode(MSG)) as out_file:
             out_file.name = "channels.txt"
-            await OxyX-UB_bot.send_file(
+            await OxyXUB_bot.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -179,7 +179,7 @@ async def list_all(event):
         await x.edit(msg)
 
 
-@OxyX-UB_cmd(pattern="adest (.*)")
+@OxyXUB_cmd(pattern="adest (.*)")
 async def destination(e):
     x = e.pattern_match.group(1)
     try:
@@ -197,7 +197,7 @@ async def destination(e):
         await eor(e, "Destination channel already added")
 
 
-@OxyX-UB_cmd(pattern="ddest ?(.*)")
+@OxyXUB_cmd(pattern="ddest ?(.*)")
 async def dd(event):
     chat_id = event.pattern_match.group(1)
     x = await eor(event, "processing")
@@ -230,7 +230,7 @@ async def dd(event):
         await x.delete()
 
 
-@OxyX-UB_cmd(pattern="listdest")
+@OxyXUB_cmd(pattern="listdest")
 async def list_all(event):
     x = await eor(event, "`Calculating...`")
     channels = get_destinations()
@@ -241,7 +241,7 @@ async def list_all(event):
     for channel in channels:
         name = ""
         try:
-            name = (await OxyX-UB.get_entity(int(channel))).title
+            name = (await OxyXUB.get_entity(int(channel))).title
         except BaseException:
             name = ""
         msg += f"=> **{name}** [`{channel}`]\n"
@@ -250,7 +250,7 @@ async def list_all(event):
         MSG = msg.replace("*", "").replace("`", "")
         with io.BytesIO(str.encode(MSG)) as out_file:
             out_file.name = "channels.txt"
-            await OxyX-UB_bot.send_file(
+            await OxyXUB_bot.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,

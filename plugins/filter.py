@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -20,14 +20,14 @@
 
 import os
 
-from pyOxyX-UB.functions.filter_db import *
+from pyOxyXUB.functions.filter_db import *
 from telegraph import upload_file as uf
 from telethon.utils import pack_bot_file_id
 
 from . import *
 
 
-@OxyX-UB_cmd(pattern="addfilter ?(.*)")
+@OxyXUB_cmd(pattern="addfilter ?(.*)")
 async def af(e):
     wrd = (e.pattern_match.group(1)).lower()
     wt = await e.get_reply_message()
@@ -59,7 +59,7 @@ async def af(e):
     await eor(e, f"Done : Filter `{wrd}` Saved.")
 
 
-@OxyX-UB_cmd(pattern="remfilter ?(.*)")
+@OxyXUB_cmd(pattern="remfilter ?(.*)")
 async def rf(e):
     wrd = (e.pattern_match.group(1)).lower()
     chat = e.chat_id
@@ -69,7 +69,7 @@ async def rf(e):
     await eor(e, f"Done : Filter `{wrd}` Removed.")
 
 
-@OxyX-UB_cmd(pattern="listfilter$")
+@OxyXUB_cmd(pattern="listfilter$")
 async def lsnote(e):
     x = list_filter(e.chat_id)
     if x:
@@ -79,7 +79,7 @@ async def lsnote(e):
         await eor(e, "No Filters Found Here")
 
 
-@OxyX-UB_bot.on(events.NewMessage())
+@OxyXUB_bot.on(events.NewMessage())
 async def fl(e):
     xx = (e.text).lower()
     chat = e.chat_id

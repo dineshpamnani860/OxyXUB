@@ -1,9 +1,9 @@
-# OxyX-UB - UserBot
+# OxyXUB - UserBot
 # Copyright (C) 2020 OxyNotOp
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyX-UB/ >
+# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyX-UB/blob/main/LICENSE/>.
+# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
 
 """
 ✘ Commands Available -
@@ -31,7 +31,7 @@ from telethon.tl.types import (
 from . import *
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="unbanall$",
     groups_only=True,
 )
@@ -52,7 +52,7 @@ async def _(event):
     await eod(xx, "{title}: {p} unbanned")
 
 
-@OxyX-UB_cmd(
+@OxyXUB_cmd(
     pattern="rmusers ?(.*)",
     groups_only=True,
 )
