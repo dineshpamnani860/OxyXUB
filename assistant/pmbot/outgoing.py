@@ -1,9 +1,9 @@
-# OxyXUB - UserBot
-# Copyright (C) 2020 OxyNotOp
+# Ultroid - UserBot
+# Copyright (C) 2020 TeamUltroid
 #
-# This file is a part of < https://github.com/OxyNotOp/OxyXUB/ >
+# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/OxyNotOp/OxyXUB/blob/main/LICENSE/>.
+# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
 # https://github.com/xditya/TeleBot/blob/master/telebot/plugins/mybot/pmbot/outgoing.py
 
@@ -14,7 +14,7 @@ from . import *
 # outgoing
 
 
-@asst.on(events.NewMessage(func=lambda e: e.is_private))
+@asst.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def on_out_mssg(event):
     x = await event.get_reply_message()
     if x is None:
