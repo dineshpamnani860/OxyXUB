@@ -1,4 +1,4 @@
-from pyOxyXUB.functions.asst_fns import *
+from pyUltroid.functions.asst_fns import *
 
 from .. import *
 
